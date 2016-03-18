@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B6DEA341C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */; };
 		A58386491C9C8D1200B95D10 /* UIImageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58386481C9C8D1200B95D10 /* UIImageWithColor.swift */; };
 		A5D229851C9C7CA0000C2959 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D229841C9C7CA0000C2959 /* RootViewController.swift */; };
 		F126E4C11C9C31AE006C783F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4C01C9C31AE006C783F /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboardbehaviourextention.swift; sourceTree = "<group>"; };
 		A58386481C9C8D1200B95D10 /* UIImageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageWithColor.swift; sourceTree = "<group>"; };
 		A5D229841C9C7CA0000C2959 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F126E4BD1C9C31AE006C783F /* BlackGirlsRock!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlackGirlsRock!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +172,11 @@
 				F126E5001C9C39D0006C783F /* PhotoMenuViewController.swift */,
 				F126E5021C9C39E5006C783F /* PhotoSelectionViewController.swift */,
 				F126E5041C9C39F3006C783F /* PhotoContentViewController.swift */,
+
+				4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */,
+
 				A5D229841C9C7CA0000C2959 /* RootViewController.swift */,
+
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				F126E4FC1C9C350B006C783F /* LoginViewController.swift in Sources */,
 				A58386491C9C8D1200B95D10 /* UIImageWithColor.swift in Sources */,
 				F126E5011C9C39D0006C783F /* PhotoMenuViewController.swift in Sources */,
+				4B6DEA341C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift in Sources */,
 				F126E4C11C9C31AE006C783F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
