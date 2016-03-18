@@ -61,10 +61,16 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     func textFieldShouldBeginEditing (textField:UITextField)->Bool{
         self.extensionScrollView = scrollView;
         self.curtextfield = textField;
         return true;
+    }
+
+    @IBAction func goToCreateAccount(sender: AnyObject) {
+        self.navigationController?.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateAccountViewController")], animated: true)
+
     }
     /*
     // MARK: - Navigation

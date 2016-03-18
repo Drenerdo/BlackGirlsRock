@@ -24,6 +24,9 @@ extension UIViewController
 
 class RootViewController: UIViewController, UINavigationControllerDelegate {
     
+    @IBOutlet var menuView: UIView!
+    @IBOutlet var cancelTouchView: UIView!
+    @IBOutlet var menuRightConstraint: NSLayoutConstraint!
     var navigation:UINavigationController!
     
     override func viewDidLoad() {
@@ -31,7 +34,12 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         
         // Do any additional setup after loading the view.
         
-        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: false);
+        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TabBarController")], animated: false);
+        
+        self.view.addConstraint(NSLayoutConstraint(item: self.menuView, attribute: .Top, relatedBy: .Equal, toItem: self.navigation.navigationBar, attribute: .Bottom, multiplier: 1, constant: 0));
+        
+        
+        self.setMenu(true, animated: false);
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +64,35 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         viewController.rootController = self;
+        if(viewController.navigationItem.rightBarButtonItem == nil)
+        {
+            viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburger"), style: .Plain, target: self, action: Selector("showHideMenu"));
+        }
+    }
+    
+    func setMenu(hide:Bool, animated:Bool)
+    {
+        if ((hide && self.menuRightConstraint.constant != 0) || (!hide && self.menuRightConstraint.constant==0))
+        {
+            return;
+        }
+        
+        self.menuRightConstraint.constant = hide ? -self.menuView.frame.size.width:0;
+        self.cancelTouchView.userInteractionEnabled = !hide
+        if(animated)
+        {
+            UIView.animateWithDuration(0.6, animations: { () -> Void in
+                self.view.layoutIfNeeded();
+            })
+        }else
+        {
+            self.view.layoutIfNeeded();
+        }
+    }
+    
+    func showHideMenu()
+    {
+        self.setMenu(self.menuRightConstraint.constant == 0, animated: true)
     }
     
 }
