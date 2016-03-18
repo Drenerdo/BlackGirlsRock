@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     
     let ref = Firebase(url: "https://bgr-production.firebaseio.com")
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -45,6 +47,8 @@ class LoginViewController: UIViewController {
         
         self.emailTextField.attributedPlaceholder = NSAttributedString(string: self.emailTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)]);
         self.passwordTextField.attributedPlaceholder = NSAttributedString(string: self.passwordTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)]);
+        
+        self.keyboardRegister();
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,7 +61,11 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func textFieldShouldBeginEditing (textField:UITextField)->Bool{
+        self.extensionScrollView = scrollView;
+        self.curtextfield = textField;
+        return true;
+    }
     /*
     // MARK: - Navigation
 
