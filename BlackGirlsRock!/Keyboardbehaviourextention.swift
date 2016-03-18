@@ -1,5 +1,5 @@
 //
-//  Kayboardbehaviourextention.swift
+//  Keyboardbehaviourextention.swift
 //  BlackGirlsRock!
 //
 //  Created by Aleksandr Budnik on 18.03.16.
@@ -20,9 +20,9 @@ extension UIViewController {
         }
     }
     
-    var curView: UIView? {
+    var extensionScrollView: UIScrollView? {
         get {
-            return objc_getAssociatedObject(self, &curViewAssociationKey) as? UITextField
+            return objc_getAssociatedObject(self, &curViewAssociationKey) as? UIScrollView
         }
         set(newValue) {
             objc_setAssociatedObject(self, &curViewAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
@@ -31,9 +31,10 @@ extension UIViewController {
 
 
 func keyboardRegister (){
-
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardShows", name: UIKeyboardWillShowNotification, object: nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardHides", name: UIKeyboardWillShowNotification, object: nil)
+    
+    //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardShows:"), name: UIKeyboardWillShowNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardShows:"), name: UIKeyboardWillChangeFrameNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardHides"), name: UIKeyboardWillHideNotification, object: nil)
 
 }
 func keyboardUnreigster (){
@@ -43,17 +44,24 @@ func keyboardUnreigster (){
 func keyboardShows (notification:NSNotification) {
    
 
-    let keyboard:CGRect = notification.userInfo!["UIKeyboardFrameEndUserInfoKey"]!.CGRectValue
-    let textField:CGRect = self.view.convertRect(self.curtextfield!.frame, toView:nil)
-    if (keyboard.origin.y<CGRectGetMaxY(textField))
+    let keyboard:CGRect = notification.userInfo![UIKeyboardFrameEndUserInfoKey]!.CGRectValue
+    let textField:CGRect = self.curtextfield!.convertRect(self.curtextfield!.bounds, toView:nil)
+    let diff = CGRectGetMaxY(textField) - keyboard.origin.y
+    print("\(keyboard) \(textField)")
+    if (diff>0)
     {
-        let delta:CGFloat = keyboard.origin.y-CGRectGetMaxY(textField);
-        self.view.transform = CGAffineTransformMakeTranslation(0, delta);
+        
+        
+        var point = extensionScrollView!.contentOffset;
+        point.y+=diff;
+        extensionScrollView?.contentOffset = point
     }
+    
+    extensionScrollView!.contentInset = UIEdgeInsets (top: 0,left: 0,bottom: keyboard.height,right: 0);
     
 };
 func keyboardHides () {
     
-    self.view.transform = CGAffineTransformIdentity
+  extensionScrollView!.contentInset = UIEdgeInsets (top: 0,left: 0,bottom: 0,right: 0);
 };
 }
