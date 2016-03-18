@@ -1,14 +1,14 @@
 //
-//  PhotoSelectionViewController.swift
+//  PhotoGaleryController.swift
 //  BlackGirlsRock!
 //
-//  Created by Andre Smith on 3/18/16.
+//  Created by Сергей on 3/19/16.
 //  Copyright © 2016 BGR Enterprises, LLC. All rights reserved.
 //
 
 import UIKit
 
-class PhotoSelectionViewController: UIViewController {
+class PhotoGaleryController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

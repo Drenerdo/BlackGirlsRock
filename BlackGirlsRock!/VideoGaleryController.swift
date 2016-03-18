@@ -1,14 +1,14 @@
 //
-//  PhotoContentViewController.swift
+//  VideoGaleryController.swift
 //  BlackGirlsRock!
 //
-//  Created by Andre Smith on 3/18/16.
+//  Created by Сергей on 3/19/16.
 //  Copyright © 2016 BGR Enterprises, LLC. All rights reserved.
 //
 
 import UIKit
 
-class PhotoContentViewController: UIViewController {
+class VideoGaleryController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

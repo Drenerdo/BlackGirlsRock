@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TeI-UV-eby">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TeI-UV-eby">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -269,14 +269,25 @@
                                         <rect key="frame" x="45" y="11" width="17" height="22"/>
                                         <color key="tintColor" red="0.0" green="0.68235294120000001" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="PhotoButton"/>
+                                        <connections>
+                                            <action selector="selectMenu:" destination="C8a-fb-r8P" eventType="touchUpInside" id="7Wp-FM-XEG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQy-2s-12Y">
                                         <rect key="frame" x="151.5" y="11" width="17" height="22"/>
+                                        <color key="tintColor" red="0.0" green="0.68235294120000001" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="VideoButton"/>
+                                        <connections>
+                                            <action selector="selectMenu:" destination="C8a-fb-r8P" eventType="touchUpInside" id="mVf-7D-t5B"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlx-J3-By0">
                                         <rect key="frame" x="259.5" y="11" width="15" height="22"/>
+                                        <color key="tintColor" red="0.0" green="0.68235294120000001" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="Shape"/>
+                                        <connections>
+                                            <action selector="selectMenu:" destination="C8a-fb-r8P" eventType="touchUpInside" id="y7S-gQ-ZqC"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtg-jp-fUR">
                                         <rect key="frame" x="0.0" y="45" width="106.5" height="5"/>
@@ -306,26 +317,98 @@
                                     <constraint firstAttribute="bottom" secondItem="lQy-2s-12Y" secondAttribute="bottom" constant="5" id="y1n-GB-M9J"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw7-RQ-0NY">
+                                <rect key="frame" x="0.0" y="50" width="320" height="550"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Qw7-RQ-0NY" secondAttribute="bottom" id="67c-Dr-dzm"/>
                             <constraint firstItem="9RX-ZK-b2a" firstAttribute="top" secondItem="48d-DV-ndk" secondAttribute="top" id="9ig-Qe-zA6"/>
                             <constraint firstItem="9RX-ZK-b2a" firstAttribute="leading" secondItem="48d-DV-ndk" secondAttribute="leading" id="NnN-PV-wdT"/>
+                            <constraint firstItem="Qw7-RQ-0NY" firstAttribute="leading" secondItem="48d-DV-ndk" secondAttribute="leading" id="O6K-oH-e2g"/>
                             <constraint firstAttribute="trailing" secondItem="9RX-ZK-b2a" secondAttribute="trailing" id="XFG-p2-mYQ"/>
+                            <constraint firstItem="Qw7-RQ-0NY" firstAttribute="top" secondItem="9RX-ZK-b2a" secondAttribute="bottom" id="uDy-Rq-qQ4"/>
+                            <constraint firstAttribute="trailing" secondItem="Qw7-RQ-0NY" secondAttribute="trailing" id="wh7-1F-hLG"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
-                        <outletCollection property="menuButtons" destination="4Hg-OK-IOi" id="z9G-zP-z29"/>
-                        <outletCollection property="menuButtons" destination="lQy-2s-12Y" id="BdT-ct-Lj2"/>
-                        <outletCollection property="menuButtons" destination="Mlx-J3-By0" id="7ya-dr-gXi"/>
+                        <outlet property="contentView" destination="Qw7-RQ-0NY" id="9Er-kY-jb0"/>
+                        <outlet property="galeryButton" destination="4Hg-OK-IOi" id="h8H-7q-tof"/>
+                        <outlet property="menuSlider" destination="qtg-jp-fUR" id="pQU-CH-OZb"/>
+                        <outlet property="musicButton" destination="Mlx-J3-By0" id="GHv-ZU-tt3"/>
+                        <outlet property="videoButton" destination="lQy-2s-12Y" id="teB-wJ-dK8"/>
+                        <outletCollection property="menuButtons" destination="4Hg-OK-IOi" collectionClass="NSMutableArray" id="z9G-zP-z29"/>
+                        <outletCollection property="menuButtons" destination="lQy-2s-12Y" collectionClass="NSMutableArray" id="BdT-ct-Lj2"/>
+                        <outletCollection property="menuButtons" destination="Mlx-J3-By0" collectionClass="NSMutableArray" id="7ya-dr-gXi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztF-xJ-Ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="460" y="1509"/>
+        </scene>
+        <!--Photo Galery Controller-->
+        <scene sceneID="iWE-2p-mBo">
+            <objects>
+                <viewController storyboardIdentifier="PhotoGaleryController" id="Q7T-42-5Ny" customClass="PhotoGaleryController" customModule="BlackGirlsRock_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nbl-HA-SrQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="VSY-MR-43W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nh2-ie-eWi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.74901960779999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xiD-M7-qcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="2150"/>
+        </scene>
+        <!--Video Galery Controller-->
+        <scene sceneID="srq-Fh-Shs">
+            <objects>
+                <viewController storyboardIdentifier="VideoGaleryController" id="20h-cp-kLH" customClass="VideoGaleryController" customModule="BlackGirlsRock_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I7K-51-PMX"/>
+                        <viewControllerLayoutGuide type="bottom" id="L8v-Et-98Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4nz-c2-C29">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.87058823529999996" green="0.30980392159999998" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4U-4a-TXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="2145"/>
+        </scene>
+        <!--Music Controller-->
+        <scene sceneID="Rfs-AP-1AM">
+            <objects>
+                <viewController storyboardIdentifier="MusicController" id="6U8-Fg-VAZ" customClass="MusicController" customModule="BlackGirlsRock_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V4k-Qz-nsL"/>
+                        <viewControllerLayoutGuide type="bottom" id="5LO-kb-NbU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VHB-li-r1u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.85098039219999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FLq-y5-GLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="2145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rBt-YQ-eUi">

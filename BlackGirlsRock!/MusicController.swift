@@ -1,14 +1,14 @@
 //
-//  PhotoMenuViewController.swift
+//  MusicController.swift
 //  BlackGirlsRock!
 //
-//  Created by Andre Smith on 3/18/16.
+//  Created by Сергей on 3/19/16.
 //  Copyright © 2016 BGR Enterprises, LLC. All rights reserved.
 //
 
 import UIKit
 
-class PhotoMenuViewController: UIViewController {
+class MusicController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

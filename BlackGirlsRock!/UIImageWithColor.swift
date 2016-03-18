@@ -21,4 +21,20 @@ extension UIImage
         return image;
         
     }
+    
+    func imageWithColor(color:UIColor)->UIImage
+    {
+        UIGraphicsBeginImageContext(self.size);
+        let contect = UIGraphicsGetCurrentContext();
+        CGContextScaleCTM(contect, 1, -1);
+        CGContextTranslateCTM(contect, 0, -self.size.height);
+        CGContextClipToMask(contect, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
+        CGContextSetFillColorWithColor(contect, color.CGColor);
+        CGContextFillRect(contect, CGRectMake(0, 0, self.size.width, self.size.height));
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image;
+
+    }
 }

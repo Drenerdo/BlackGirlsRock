@@ -11,6 +11,9 @@
 		A58386491C9C8D1200B95D10 /* UIImageWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58386481C9C8D1200B95D10 /* UIImageWithColor.swift */; };
 		A583864D1C9CA28E00B95D10 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583864C1C9CA28E00B95D10 /* TabBarController.swift */; };
 		A583864F1C9CAB2900B95D10 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583864E1C9CAB2900B95D10 /* GradientView.swift */; };
+		A58386511C9CBAE600B95D10 /* PhotoGaleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58386501C9CBAE600B95D10 /* PhotoGaleryController.swift */; };
+		A58386531C9CBAF500B95D10 /* VideoGaleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58386521C9CBAF500B95D10 /* VideoGaleryController.swift */; };
+		A58386551C9CBB0300B95D10 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58386541C9CBB0300B95D10 /* MusicController.swift */; };
 		A5D229851C9C7CA0000C2959 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D229841C9C7CA0000C2959 /* RootViewController.swift */; };
 		F126E4C11C9C31AE006C783F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4C01C9C31AE006C783F /* AppDelegate.swift */; };
 		F126E4C61C9C31AE006C783F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F126E4C41C9C31AE006C783F /* Main.storyboard */; };
@@ -26,9 +29,6 @@
 		F126E4F91C9C3224006C783F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F126E4F81C9C3224006C783F /* SystemConfiguration.framework */; };
 		F126E4FC1C9C350B006C783F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4FB1C9C350B006C783F /* LoginViewController.swift */; };
 		F126E4FE1C9C38B3006C783F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */; };
-		F126E5011C9C39D0006C783F /* PhotoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E5001C9C39D0006C783F /* PhotoMenuViewController.swift */; };
-		F126E5031C9C39E5006C783F /* PhotoSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E5021C9C39E5006C783F /* PhotoSelectionViewController.swift */; };
-		F126E5051C9C39F3006C783F /* PhotoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E5041C9C39F3006C783F /* PhotoContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +53,9 @@
 		A58386481C9C8D1200B95D10 /* UIImageWithColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageWithColor.swift; sourceTree = "<group>"; };
 		A583864C1C9CA28E00B95D10 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A583864E1C9CAB2900B95D10 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		A58386501C9CBAE600B95D10 /* PhotoGaleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGaleryController.swift; sourceTree = "<group>"; };
+		A58386521C9CBAF500B95D10 /* VideoGaleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoGaleryController.swift; sourceTree = "<group>"; };
+		A58386541C9CBB0300B95D10 /* MusicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		A5D229841C9C7CA0000C2959 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F126E4BD1C9C31AE006C783F /* BlackGirlsRock!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlackGirlsRock!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F126E4C01C9C31AE006C783F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,9 +77,6 @@
 		F126E4F81C9C3224006C783F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F126E4FB1C9C350B006C783F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		F126E5001C9C39D0006C783F /* PhotoMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMenuViewController.swift; sourceTree = "<group>"; };
-		F126E5021C9C39E5006C783F /* PhotoSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectionViewController.swift; sourceTree = "<group>"; };
-		F126E5041C9C39F3006C783F /* PhotoContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,12 +174,12 @@
 			children = (
 				F126E4FB1C9C350B006C783F /* LoginViewController.swift */,
 				F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */,
-				F126E5001C9C39D0006C783F /* PhotoMenuViewController.swift */,
-				F126E5021C9C39E5006C783F /* PhotoSelectionViewController.swift */,
-				F126E5041C9C39F3006C783F /* PhotoContentViewController.swift */,
 				4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */,
 				A5D229841C9C7CA0000C2959 /* RootViewController.swift */,
 				A583864C1C9CA28E00B95D10 /* TabBarController.swift */,
+				A58386501C9CBAE600B95D10 /* PhotoGaleryController.swift */,
+				A58386521C9CBAF500B95D10 /* VideoGaleryController.swift */,
+				A58386541C9CBB0300B95D10 /* MusicController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -319,16 +319,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F126E4FE1C9C38B3006C783F /* CreateAccountViewController.swift in Sources */,
-				F126E5031C9C39E5006C783F /* PhotoSelectionViewController.swift in Sources */,
 				A583864F1C9CAB2900B95D10 /* GradientView.swift in Sources */,
-				F126E5051C9C39F3006C783F /* PhotoContentViewController.swift in Sources */,
 				A583864D1C9CA28E00B95D10 /* TabBarController.swift in Sources */,
 				A5D229851C9C7CA0000C2959 /* RootViewController.swift in Sources */,
 				F126E4FC1C9C350B006C783F /* LoginViewController.swift in Sources */,
+				A58386531C9CBAF500B95D10 /* VideoGaleryController.swift in Sources */,
+				A58386511C9CBAE600B95D10 /* PhotoGaleryController.swift in Sources */,
 				A58386491C9C8D1200B95D10 /* UIImageWithColor.swift in Sources */,
-				F126E5011C9C39D0006C783F /* PhotoMenuViewController.swift in Sources */,
 				4B6DEA341C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift in Sources */,
 				F126E4C11C9C31AE006C783F /* AppDelegate.swift in Sources */,
+				A58386551C9CBB0300B95D10 /* MusicController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
