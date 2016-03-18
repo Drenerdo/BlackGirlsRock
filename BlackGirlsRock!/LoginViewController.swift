@@ -58,6 +58,9 @@ class LoginViewController: UIViewController {
     }
     
 
+    @IBAction func goToCreateAccount(sender: AnyObject) {
+        self.navigationController?.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateAccountViewController")], animated: true)
+    }
     /*
     // MARK: - Navigation
 
