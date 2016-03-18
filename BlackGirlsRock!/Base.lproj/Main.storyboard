@@ -23,17 +23,49 @@
                                     <segue destination="ZMm-CW-CcR" kind="embed" identifier="EmbedNavigation" id="TDW-RR-4Y3"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsk-o8-Z7q">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPj-cQ-4Hp" customClass="GradientView" customModule="BlackGirlsRock_" customModuleProvider="target">
+                                        <rect key="frame" x="137" y="0.0" width="263" height="600"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="263" id="7qN-mn-fol"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hPj-cQ-4Hp" firstAttribute="top" secondItem="Dsk-o8-Z7q" secondAttribute="top" placeholder="YES" id="53o-Ph-T7o"/>
+                                    <constraint firstAttribute="trailing" secondItem="hPj-cQ-4Hp" secondAttribute="trailing" id="HxY-Xm-HwQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="hPj-cQ-4Hp" secondAttribute="bottom" id="jlW-x3-bCy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gKF-Xb-YpG" secondAttribute="trailing" id="1un-HV-b3N"/>
+                            <constraint firstItem="Dsk-o8-Z7q" firstAttribute="leading" secondItem="aZP-lj-1pS" secondAttribute="leading" id="8j9-oE-zZg"/>
+                            <constraint firstItem="4sV-v0-uHH" firstAttribute="top" secondItem="Dsk-o8-Z7q" secondAttribute="bottom" id="JAF-o9-PIW"/>
                             <constraint firstItem="gKF-Xb-YpG" firstAttribute="leading" secondItem="aZP-lj-1pS" secondAttribute="leading" id="Mti-A6-rTx"/>
                             <constraint firstItem="gKF-Xb-YpG" firstAttribute="top" secondItem="aZP-lj-1pS" secondAttribute="top" id="XTx-IK-hUY"/>
+                            <constraint firstItem="Dsk-o8-Z7q" firstAttribute="top" secondItem="aZP-lj-1pS" secondAttribute="top" id="ioC-QD-5RE"/>
                             <constraint firstAttribute="bottom" secondItem="gKF-Xb-YpG" secondAttribute="bottom" id="v6b-hd-8Wq"/>
+                            <constraint firstAttribute="trailing" secondItem="Dsk-o8-Z7q" secondAttribute="trailing" id="zJz-r4-Ik6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ioC-QD-5RE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="600"/>
+                    <connections>
+                        <outlet property="cancelTouchView" destination="Dsk-o8-Z7q" id="F7r-rp-Ikp"/>
+                        <outlet property="menuRightConstraint" destination="HxY-Xm-HwQ" id="JmF-zy-aaH"/>
+                        <outlet property="menuView" destination="hPj-cQ-4Hp" id="UBz-HQ-rIH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqc-SZ-bkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,6 +242,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJi-OL-MdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="409" y="529"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zW9-CD-Rr7">
+            <objects>
+                <viewController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C8a-fb-r8P" customClass="TabBarController" customModule="BlackGirlsRock_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="882-ol-Dta"/>
+                        <viewControllerLayoutGuide type="bottom" id="5gL-oT-Hv4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="48d-DV-ndk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ztF-xJ-Ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="1509"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rBt-YQ-eUi">
