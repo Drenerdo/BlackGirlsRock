@@ -18,7 +18,13 @@ extension UIViewController
         }
         set(newValue) {
             objc_setAssociatedObject(self, &rootAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+            self.didSetRootController();
         }
+    }
+    
+    func didSetRootController()
+    {
+        
     }
 }
 
@@ -64,6 +70,8 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         viewController.rootController = self;
+
+        
         if(viewController.navigationItem.rightBarButtonItem == nil)
         {
             viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburger"), style: .Plain, target: self, action: Selector("showHideMenu"));

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarController: UIViewController {
+class TabBarController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet var galeryButton: UIButton!
     @IBOutlet var videoButton: UIButton!
     @IBOutlet var musicButton: UIButton!
@@ -21,7 +21,8 @@ class TabBarController: UIViewController {
     var prevSelectedButton : UIButton!
     
     lazy var photoGaleriController: UIViewController = {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PhotoGaleryController")
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PhotoGaleryNavigation") as! UINavigationController
+        controller.delegate = self;
         controller.view.translatesAutoresizingMaskIntoConstraints = false;
         return controller
     }()
@@ -43,7 +44,14 @@ class TabBarController: UIViewController {
         {
             button.setImage(button.imageForState(.Normal)?.imageWithColor(button.tintColor), forState: .Selected);
         }
+        
+        self.selectMenu(self.galeryButton);
         // Do any additional setup after loading the view.
+    }
+    
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        viewController.rootController = self.rootController;
+        self.navigationItem.leftBarButtonItem = viewController.navigationItem.leftBarButtonItem;
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,6 +116,7 @@ class TabBarController: UIViewController {
                 curIndex--;
             }
             let controller = self.getControllerForIndex(curIndex)!
+            self.addChildViewController(controller);
             self.contentView.addSubview(controller.view)
             self.contentView.addConstraints([NSLayoutConstraint(item: self.contentView, attribute: .Left, relatedBy: .Equal, toItem: controller.view, attribute: .Left, multiplier: 1, constant: 0),
                 NSLayoutConstraint(item: self.contentView, attribute: .Right, relatedBy: .Equal, toItem: controller.view, attribute: .Right, multiplier: 1, constant: 0),
@@ -118,6 +127,12 @@ class TabBarController: UIViewController {
         }
         
         let controller = self.getControllerForIndex(finalIndex)!
+        self.navigationItem.leftBarButtonItem = controller.navigationItem.leftBarButtonItem
+        if let navigation = controller as? UINavigationController
+        {
+            self.navigationItem.leftBarButtonItem = navigation.visibleViewController?.navigationItem.leftBarButtonItem;
+        }
+        self.addChildViewController(controller);
         self.contentView.addSubview(controller.view)
         self.contentView.addConstraints([NSLayoutConstraint(item: self.contentView, attribute: .Left, relatedBy: .Equal, toItem: controller.view, attribute: .Left, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: self.contentView, attribute: .Right, relatedBy: .Equal, toItem: controller.view, attribute: .Right, multiplier: 1, constant: 0),
@@ -150,6 +165,7 @@ class TabBarController: UIViewController {
                     
                     let controller = self.getControllerForIndex(curIndex)!
                     controller.view.removeFromSuperview();
+                    controller.removeFromParentViewController();
                     if(finalIndex>firstIndex)
                     {
                         curIndex++;
@@ -162,6 +178,15 @@ class TabBarController: UIViewController {
        
     }
     
+    override func didSetRootController()
+    {
+        super.didSetRootController();
+        let navigation = self.photoGaleriController as! UINavigationController;
+        for controller in navigation.viewControllers
+        {
+            controller.rootController = self.rootController;
+        }
+    }
     
     /*
     // MARK: - Navigation
