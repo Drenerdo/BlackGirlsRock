@@ -451,24 +451,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-J1-ya8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testGaleryPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="KOv-D7-IZu">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo Gallery Copy 4" translatesAutoresizingMaskIntoConstraints="NO" id="KOv-D7-IZu">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1WZ-fa-f3V">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="KOv-D7-IZu" firstAttribute="top" secondItem="fwg-J1-ya8" secondAttribute="top" id="26v-A9-BWr"/>
                                             <constraint firstAttribute="bottom" secondItem="KOv-D7-IZu" secondAttribute="bottom" id="81V-B1-T5F"/>
                                             <constraint firstAttribute="trailing" secondItem="KOv-D7-IZu" secondAttribute="trailing" id="MAL-TP-2U1"/>
-                                            <constraint firstAttribute="trailing" secondItem="1WZ-fa-f3V" secondAttribute="trailing" id="PdH-oF-ngn"/>
                                             <constraint firstItem="KOv-D7-IZu" firstAttribute="leading" secondItem="fwg-J1-ya8" secondAttribute="leading" id="QJi-zA-idJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="1WZ-fa-f3V" secondAttribute="bottom" id="V8o-jU-qz5"/>
-                                            <constraint firstItem="1WZ-fa-f3V" firstAttribute="top" secondItem="fwg-J1-ya8" secondAttribute="top" id="tAJ-Tb-PSb"/>
-                                            <constraint firstItem="1WZ-fa-f3V" firstAttribute="leading" secondItem="fwg-J1-ya8" secondAttribute="leading" id="w1g-LQ-xD6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -545,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U88-N6-ov1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="3489"/>
+            <point key="canvasLocation" x="42" y="3510"/>
         </scene>
         <!--Video Folder Controller-->
         <scene sceneID="mo4-ot-9Mw">
@@ -565,10 +557,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0W-Jv-2q1">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testGaleryPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="cwa-SA-Yne">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo Gallery Copy 4" translatesAutoresizingMaskIntoConstraints="NO" id="cwa-SA-Yne">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-nn-gOZ">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-nn-gOZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             </view>
@@ -585,7 +577,7 @@
                                             <constraint firstItem="cwa-SA-Yne" firstAttribute="leading" secondItem="z0W-Jv-2q1" secondAttribute="leading" id="tV2-8W-3N7"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCY-uU-p6u">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCY-uU-p6u">
                                         <rect key="frame" x="129.5" y="46" width="61.5" height="43.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxu-ka-o9M">
@@ -715,10 +707,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPj-kr-7gE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testGaleryPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="pOo-Ss-NN0">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo Gallery Copy 4" translatesAutoresizingMaskIntoConstraints="NO" id="pOo-Ss-NN0">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTZ-WK-hdg">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTZ-WK-hdg">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             </view>
@@ -735,7 +727,7 @@
                                             <constraint firstItem="pOo-Ss-NN0" firstAttribute="leading" secondItem="rPj-kr-7gE" secondAttribute="leading" id="neN-Tb-xex"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iin-sy-sf1">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iin-sy-sf1">
                                         <rect key="frame" x="129" y="46" width="61.5" height="43.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtN-2G-b7D">
@@ -894,10 +886,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IR-lL-S8b">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testGaleryPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="reC-i1-QW7">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo Gallery Copy 4" translatesAutoresizingMaskIntoConstraints="NO" id="reC-i1-QW7">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucE-Sg-nvM">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucE-Sg-nvM">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             </view>
@@ -914,7 +906,7 @@
                                             <constraint firstItem="ucE-Sg-nvM" firstAttribute="top" secondItem="0IR-lL-S8b" secondAttribute="top" id="obU-8p-hlQ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gq-p6-6DJ">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gq-p6-6DJ">
                                         <rect key="frame" x="129" y="46" width="61.5" height="43.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrW-aZ-MZw">
@@ -1399,6 +1391,7 @@
     <resources>
         <image name="Forward Arrow-50" width="21" height="17"/>
         <image name="GaleryTestImage" width="375" height="375"/>
+        <image name="Photo Gallery Copy 4" width="375" height="144"/>
         <image name="PhotoButton" width="17" height="17"/>
         <image name="PjotoDetailsTest" width="750" height="553"/>
         <image name="Shape" width="15" height="18"/>
@@ -1407,6 +1400,5 @@
         <image name="facebook_icon" width="9" height="20"/>
         <image name="head" width="18" height="15"/>
         <image name="heart_active" width="18" height="14"/>
-        <image name="testGaleryPhoto" width="750" height="283"/>
     </resources>
 </document>

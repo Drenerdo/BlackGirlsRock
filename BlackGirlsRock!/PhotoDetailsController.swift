@@ -16,6 +16,7 @@ class PhotoDetailsController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
        // self.configureScrollView();
         // Do any additional setup after loading the view.
     }
@@ -29,6 +30,11 @@ class PhotoDetailsController: UIViewController,UIScrollViewDelegate {
     
         super.viewDidLayoutSubviews();
         self.configureScrollView();
+    }
+    
+    func backAction()
+    {
+        self.navigationController?.popViewControllerAnimated(true);
     }
     
     func configureScrollView()

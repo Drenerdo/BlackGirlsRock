@@ -11,6 +11,7 @@ import UIKit
 class PhotoGaleryController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
+    var images: Array<String> = ["Photo1 Gallery Copy 3","Photo1 Gallery","Photo1 Gallery Copy","Photo1 Gallery Copy 2"];
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +25,15 @@ class PhotoGaleryController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30;
+        return self.images.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("GeleryCell") as! GaleryCell;
-        cell.topLabel.text = "Top \(indexPath.row)";
-        cell.bottomLabel.text = "Bottom \(indexPath.row)";
-        
+        //cell.topLabel.text = "Top \(indexPath.row)";
+        //cell.bottomLabel.text = "Bottom \(indexPath.row)";
+        cell.imagePreview.image = UIImage(named: self.images[indexPath.row]);
         return cell;
     }
     

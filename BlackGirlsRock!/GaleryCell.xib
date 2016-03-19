@@ -23,7 +23,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testGaleryPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="WNa-YC-UEY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nj0-NG-ztK">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nj0-NG-ztK">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </view>
@@ -40,7 +40,7 @@
                                     <constraint firstItem="nj0-NG-ztK" firstAttribute="top" secondItem="XmS-iL-TBX" secondAttribute="top" id="iuy-kb-t55"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbq-6B-DQG">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbq-6B-DQG">
                                 <rect key="frame" x="129.5" y="44.5" width="61.5" height="43.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOL-Rp-Hkm">

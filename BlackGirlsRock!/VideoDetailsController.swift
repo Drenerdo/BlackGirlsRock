@@ -16,7 +16,8 @@ class VideoDetailsController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.configureScrollView();
+        //self.configureScrollView();
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
         // Do any additional setup after loading the view.
     }
 
@@ -42,7 +43,10 @@ class VideoDetailsController: UIViewController,UIScrollViewDelegate {
         self.scrollView.maximumZoomScale = 1.0;
     }
     
-    
+    func backAction()
+    {
+        self.navigationController?.popViewControllerAnimated(true);
+    }
     
     /*func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return self.photo;
