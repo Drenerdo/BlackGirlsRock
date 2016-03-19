@@ -27,7 +27,8 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
         return controller
     }()
     lazy var videoGaleriController: UIViewController = {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("VideoGaleryController")
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("VideoGaleryNavigation") as! UINavigationController
+        controller.delegate = self;
         controller.view.translatesAutoresizingMaskIntoConstraints = false;
         return controller
     }()
@@ -146,6 +147,9 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
                 var curIndex = firstIndex;
                 while (finalIndex != curIndex)
                 {
+                    
+                    let controller = self.getControllerForIndex(curIndex)!
+                    controller.view.transform = CGAffineTransformMakeTranslation(self.contentView.frame.size.width*CGFloat(curIndex-finalIndex), 0);
                     if(finalIndex>firstIndex)
                     {
                         curIndex++;
@@ -153,11 +157,9 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
                     {
                         curIndex--;
                     }
-                    let controller = self.getControllerForIndex(curIndex)!
-                    controller.view.transform = CGAffineTransformMakeTranslation(self.contentView.frame.size.width*CGFloat(curIndex-finalIndex), 0);
                 }
                 let controller = self.getControllerForIndex(finalIndex)!
-            controller.view.transform = CGAffineTransformIdentity;
+                controller.view.transform = CGAffineTransformIdentity;
             }) { (complete) -> Void in
                 var curIndex = firstIndex;
                 while (finalIndex != curIndex)
