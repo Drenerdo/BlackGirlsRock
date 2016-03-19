@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarController: UIViewController, UINavigationControllerDelegate {
+class TabBarController: UIViewController, UINavigationControllerDelegate,UIGestureRecognizerDelegate {
     @IBOutlet var galeryButton: UIButton!
     @IBOutlet var videoButton: UIButton!
     @IBOutlet var musicButton: UIButton!
@@ -19,6 +19,9 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet var contentView: UIView!
     
     var prevSelectedButton : UIButton!
+    
+    var currentContentController:UIViewController!
+    var tmpContentController:UIViewController!
     
     lazy var photoGaleriController: UIViewController = {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PhotoGaleryNavigation") as! UINavigationController
@@ -74,6 +77,24 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
             return -1
         }
     }
+    func getIndexOfController(controller:UIViewController?)->NSInteger
+    {
+        if let stc:UIViewController = controller
+        {
+            switch (stc)
+            {
+            case self.photoGaleriController:
+                return 0;
+            case self.videoGaleriController:
+                return 1;
+            case self.musicController:
+                return 2;
+            default:
+                return -1
+            }
+        }
+        return -1;
+    }
     
     func getControllerForIndex(index:NSInteger)->UIViewController?
     {
@@ -85,6 +106,21 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
             return self.videoGaleriController;
         case 2:
             return self.musicController;
+        default:
+            return nil
+        }
+    }
+    
+    func getButtonForIndex(index:NSInteger)->UIButton?
+    {
+        switch (index)
+        {
+        case 0:
+            return self.galeryButton;
+        case 1:
+            return self.videoButton;
+        case 2:
+            return self.musicButton;
         default:
             return nil
         }
@@ -141,6 +177,7 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
             NSLayoutConstraint(item: self.contentView, attribute: .Bottom, relatedBy: .Equal, toItem: controller.view, attribute: .Bottom, multiplier: 1, constant: 0)])
         
         controller.view.transform = CGAffineTransformMakeTranslation(self.contentView.frame.size.width*CGFloat(finalIndex-firstIndex), 0);
+        self.currentContentController = controller;
         
         UIView.animateWithDuration(0.6, animations: { () -> Void in
                 self.menuSlider.transform = CGAffineTransformMakeTranslation(self.menuSlider.frame.size.width*CGFloat(finalIndex), 0);
@@ -190,6 +227,105 @@ class TabBarController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
+    @IBAction func swipeMenu(sender: UIPanGestureRecognizer)
+    {
+        switch (sender.state)
+        {
+        case .Began:
+            self.tmpContentController = nil;
+        case .Changed:
+            
+            let index = self.getIndexOfController(self.currentContentController);
+            let tmpIndex = self.getIndexOfController(self.tmpContentController);
+            let translation = sender.translationInView(self.contentView).x;
+            
+            let nextIndex = index+(translation<0 ? 1 : -1);
+            if(tmpIndex != nextIndex)
+            {
+                if(tmpIndex>=0)
+                {
+                    self.tmpContentController.removeFromParentViewController();
+                    self.tmpContentController.view.removeFromSuperview();
+                    self.tmpContentController = nil
+                }
+                if(nextIndex>=0)
+                {
+                    self.tmpContentController = self.getControllerForIndex(nextIndex);
+                    self.addChildViewController(tmpContentController);
+                    self.contentView.addSubview(self.tmpContentController.view);
+                    self.contentView.addConstraints([NSLayoutConstraint(item: self.contentView, attribute: .Left, relatedBy: .Equal, toItem: self.tmpContentController.view, attribute: .Left, multiplier: 1, constant: 0),
+                        NSLayoutConstraint(item: self.contentView, attribute: .Right, relatedBy: .Equal, toItem: self.tmpContentController.view, attribute: .Right, multiplier: 1, constant: 0),
+                        NSLayoutConstraint(item: self.contentView, attribute: .Top, relatedBy: .Equal, toItem: self.tmpContentController.view, attribute: .Top, multiplier: 1, constant: 0),
+                        NSLayoutConstraint(item: self.contentView, attribute: .Bottom, relatedBy: .Equal, toItem: self.tmpContentController.view, attribute: .Bottom, multiplier: 1, constant: 0)])
+                }
+            }
+            
+            if((index == 0 && translation>0)||(index==2&&translation<0))
+            {
+                self.currentContentController.view.transform = CGAffineTransformMakeTranslation((translation>0 ? 1.0 : -1.0)*sqrt(abs(translation)*20), 0);
+                self.menuSlider.transform = CGAffineTransformMakeTranslation((translation>0 ? -1.0 : 1.0)*sqrt(abs(translation)*20)*self.menuSlider.frame.size.width/self.contentView.frame.size.width + self.menuSlider.frame.size.width*CGFloat(index), 0)
+            }else
+            {
+                self.currentContentController.view.transform = CGAffineTransformMakeTranslation(translation, 0);
+                if(self.tmpContentController != nil)
+                {
+                    self.tmpContentController.view.transform = CGAffineTransformMakeTranslation((translation<0 ? 1.0 : -1.0)*self.contentView.frame.size.width + translation, 0);
+                }
+                self.menuSlider.transform = CGAffineTransformMakeTranslation(self.menuSlider.frame.size.width*CGFloat(index)-translation*self.menuSlider.frame.size.width/self.contentView.frame.size.width, 0)
+            }
+        case .Ended:
+            
+                UIView.animateWithDuration(0.6, delay: 0.0, options: .CurveEaseOut, animations: { () -> Void in
+                var index = self.getIndexOfController(self.currentContentController);
+                let translation = sender.translationInView(self.contentView).x;
+                let velocity = sender.velocityInView(self.contentView);
+                let endPoint = translation + velocity.x / 20.0;
+                if((index == 0 && translation>0)||(index==2&&translation<0))
+                {
+                    self.currentContentController.view.transform = CGAffineTransformIdentity
+                    
+                }else if(abs(endPoint)>self.contentView.frame.size.width/2)
+                {
+                    let tmpIndex = self.getIndexOfController(self.tmpContentController);
+                    self.currentContentController.view.transform = CGAffineTransformMakeTranslation((translation>0 ? 1.0 : -1.0)*self.contentView.frame.size.width, 0);
+                    self.tmpContentController.view.transform = CGAffineTransformIdentity
+                    
+                    let tmp = self.currentContentController
+                    self.currentContentController = self.tmpContentController;
+                    self.tmpContentController = tmp;
+                    
+                    self.getButtonForIndex(tmpIndex)?.selected = true;
+                    self.getButtonForIndex(index)?.selected = false;
+                    index = tmpIndex;
+                }else
+                {
+                    self.currentContentController.view.transform = CGAffineTransformIdentity
+                    self.tmpContentController.view.transform = CGAffineTransformMakeTranslation((translation<0 ? 1.0 : -1.0)*self.contentView.frame.size.width, 0);
+                }
+                
+               
+                self.menuSlider.transform = CGAffineTransformMakeTranslation(self.menuSlider.frame.size.width*CGFloat(index), 0)
+                }, completion: { (complete) -> Void in
+                    
+                    if(self.tmpContentController != nil)
+                    {
+                        self.tmpContentController.removeFromParentViewController();
+                        self.tmpContentController.view.removeFromSuperview();
+                        self.tmpContentController = nil
+                    }
+                    self.navigationItem.leftBarButtonItem = self.currentContentController.navigationItem.leftBarButtonItem
+                    if let navigation = self.currentContentController as? UINavigationController
+                    {
+                        self.navigationItem.leftBarButtonItem = navigation.visibleViewController?.navigationItem.leftBarButtonItem;
+                    }
+            } )
+            
+            
+            
+        default: break
+            
+        }
+    }
     /*
     // MARK: - Navigation
     

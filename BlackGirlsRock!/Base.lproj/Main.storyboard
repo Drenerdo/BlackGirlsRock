@@ -319,9 +319,13 @@
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw7-RQ-0NY">
                                 <rect key="frame" x="0.0" y="50" width="320" height="550"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NTP-uU-QZb" appends="YES" id="RrF-7f-5IP"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Qw7-RQ-0NY" secondAttribute="bottom" id="67c-Dr-dzm"/>
                             <constraint firstItem="9RX-ZK-b2a" firstAttribute="top" secondItem="48d-DV-ndk" secondAttribute="top" id="9ig-Qe-zA6"/>
@@ -347,6 +351,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztF-xJ-Ec5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="NTP-uU-QZb">
+                    <connections>
+                        <action selector="swipeMenu:" destination="C8a-fb-r8P" id="CvR-oM-FSI"/>
+                        <outlet property="delegate" destination="C8a-fb-r8P" id="sLQ-oI-4Yj"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="460" y="1509"/>
         </scene>
@@ -1099,14 +1109,30 @@
                     <view key="view" contentMode="scaleToFill" id="VHB-li-r1u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.85098039219999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7S-mB-czy">
+                                <rect key="frame" x="106.5" y="285" width="107" height="30"/>
+                                <state key="normal" title="Login to spotify"/>
+                                <connections>
+                                    <action selector="loginToSpotify:" destination="6U8-Fg-VAZ" eventType="touchUpInside" id="gQA-Gm-G0Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="n7S-mB-czy" firstAttribute="centerY" secondItem="VHB-li-r1u" secondAttribute="centerY" id="3fI-b1-wjf"/>
+                            <constraint firstItem="n7S-mB-czy" firstAttribute="centerX" secondItem="VHB-li-r1u" secondAttribute="centerX" id="f09-bs-DDw"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
+                    <connections>
+                        <outlet property="loginButton" destination="n7S-mB-czy" id="5fJ-qY-lE5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLq-y5-GLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="2145"/>
+            <point key="canvasLocation" x="809" y="2174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rBt-YQ-eUi">
