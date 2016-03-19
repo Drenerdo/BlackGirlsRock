@@ -16,7 +16,7 @@ class PhotoDetailsController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.configureScrollView();
+       // self.configureScrollView();
         // Do any additional setup after loading the view.
     }
 
@@ -44,9 +44,9 @@ class PhotoDetailsController: UIViewController,UIScrollViewDelegate {
     
     
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    /*func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return self.photo;
-    }
+    }*/
     
     func scrollViewDidZoom(scrollView: UIScrollView) {
         var topInset = (scrollView.frame.size.height - scrollView.contentSize.height)/2;
