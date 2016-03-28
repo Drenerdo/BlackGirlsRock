@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        FlickrKit.sharedFlickrKit().initializeWithAPIKey("41818ce2b48d0d0fc8522ae4dc7d3796", sharedSecret: "69e8c738963d7b5b")
+        
         return true
     }
 
@@ -51,19 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    /*func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-        if(SPTAuth.defaultInstance().canHandleURL(url))
-        {
-            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error, seesion) -> Void in
-
-                    NSNotificationCenter.defaultCenter().postNotificationName("SpotifyLoginCallback", object: seesion)
-                }
-            )
-            return true;
-        }
-        return false;
-    }*/
     
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {

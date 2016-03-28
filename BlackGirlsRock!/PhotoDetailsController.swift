@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import FlickrKit
+import SDWebImage
 
 class PhotoDetailsController: UIViewController,UIScrollViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var photo: UIImageView!
     @IBOutlet var descriptionLable: UILabel!
+    var previewImage: UIImage?
+    var imageInfo: Dictionary<NSObject, AnyObject>!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
        // self.configureScrollView();
         // Do any additional setup after loading the view.
+        let url = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeOriginal, fromPhotoDictionary: self.imageInfo )
+        print(url)
+        self.photo.sd_setImageWithURL(url, placeholderImage: self.previewImage)
+        self.descriptionLable.text = "CAPTION: \(self.imageInfo["title"] as! String)"
     }
 
     override func didReceiveMemoryWarning() {

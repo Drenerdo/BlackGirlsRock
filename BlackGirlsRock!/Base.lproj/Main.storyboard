@@ -253,13 +253,13 @@ Adewunmi</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8U-7u-DsH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nf-lS-f7N">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nf-lS-f7N">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="User Auth Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vIR-TH-hbx">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User Auth Logo" translatesAutoresizingMaskIntoConstraints="NO" id="vIR-TH-hbx">
                                                 <rect key="frame" x="82" y="84" width="156" height="133"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zm-Ni-guL">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zm-Ni-guL">
                                                 <rect key="frame" x="20" y="247" width="280" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="cIY-eG-yk8"/>
@@ -271,19 +271,19 @@ Adewunmi</string>
                                                     <action selector="loginWithFacebook:" destination="WLu-c6-Fvc" eventType="touchUpInside" id="hn7-J0-rDm"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Log in with email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZh-6o-ruP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZh-6o-ruP">
                                                 <rect key="frame" x="40" y="327" width="108" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EMAIL ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-3y-IPV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-3y-IPV">
                                                 <rect key="frame" x="40" y="354" width="81" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="am7-cg-RMw">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="am7-cg-RMw">
                                                 <rect key="frame" x="40" y="370" width="240" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="wgC-2P-bYl"/>
@@ -295,20 +295,20 @@ Adewunmi</string>
                                                     <outlet property="delegate" destination="WLu-c6-Fvc" id="q56-0Z-l2m"/>
                                                 </connections>
                                             </textField>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXV-ao-Bfi">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXV-ao-Bfi">
                                                 <rect key="frame" x="40" y="399" width="240" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="IXx-c2-eJJ"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5P-OX-tmA">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5P-OX-tmA">
                                                 <rect key="frame" x="40" y="410" width="58" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4A-Bd-80L">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4A-Bd-80L">
                                                 <rect key="frame" x="40" y="426" width="240" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="BKu-wE-dKg"/>
@@ -320,14 +320,14 @@ Adewunmi</string>
                                                     <outlet property="delegate" destination="WLu-c6-Fvc" id="Uhd-FQ-Gt9"/>
                                                 </connections>
                                             </textField>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBr-UE-K5C">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBr-UE-K5C">
                                                 <rect key="frame" x="40" y="455" width="240" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="8B6-Ev-wm8"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwo-bW-Uf7">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwo-bW-Uf7">
                                                 <rect key="frame" x="20" y="486" width="280" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="RcK-an-g2r"/>
@@ -335,7 +335,7 @@ Adewunmi</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="LOG IN"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-5u-E6J">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-5u-E6J">
                                                 <rect key="frame" x="40" y="626" width="82" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <state key="normal" title="Create Account"/>
@@ -343,7 +343,7 @@ Adewunmi</string>
                                                     <action selector="goToCreateAccount:" destination="WLu-c6-Fvc" eventType="touchUpInside" id="CO0-JL-FO0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K87-fA-IFq">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K87-fA-IFq">
                                                 <rect key="frame" x="219" y="626" width="61" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <state key="normal" title="Need Help?"/>
@@ -420,10 +420,10 @@ Adewunmi</string>
             </objects>
             <point key="canvasLocation" x="409" y="529"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--BLACK GIRLS ROCK!-->
         <scene sceneID="zW9-CD-Rr7">
             <objects>
-                <viewController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C8a-fb-r8P" customClass="TabBarController" customModule="BlackGirlsRock_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabBarController" title="BLACK GIRLS ROCK!" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C8a-fb-r8P" customClass="TabBarController" customModule="BlackGirlsRock_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="882-ol-Dta"/>
                         <viewControllerLayoutGuide type="bottom" id="5gL-oT-Hv4"/>
@@ -684,7 +684,7 @@ Adewunmi</string>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="Bxl-fD-6Nw" id="quG-sK-1CA"/>
-                                            <segue destination="gV7-5y-6dR" kind="push" id="3wi-D0-34A"/>
+                                            <segue destination="gV7-5y-6dR" kind="push" identifier="ShowDetailsPage" id="3wi-D0-34A"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -714,6 +714,9 @@ Adewunmi</string>
                     <navigationItem key="navigationItem" id="TJ9-FH-Qlz"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
+                    <connections>
+                        <outlet property="collectionView" destination="D0Q-Dg-Okb" id="LXT-ae-Wb2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U88-N6-ov1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
