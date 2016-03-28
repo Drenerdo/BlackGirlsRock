@@ -8,10 +8,12 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
-    let ref = Firebase(url: "https://bgr-production.firebaseio.com")
+    private let dataURL = "https://bgr-app.firebaseio.com"
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -23,19 +25,65 @@ class LoginViewController: UIViewController {
 
     @IBOutlet var loginButton: UIButton!
     
-    @IBAction func handleLogin(sender: AnyObject) {
-        ref.authUser(emailTextField.text!, password: passwordTextField.text!, withCompletionBlock: { error, authData in
-            if error != nil
-            {
-                print("Unable to signin user")
-            }
-            else
-            {
-                let uid = authData.uid
-                print("Login successful with uid: \(uid)")
-            }
-        })
+//    @IBAction func handleLogin(sender: AnyObject) {
+//        ref.authUser(emailTextField.text!, password: passwordTextField.text!, withCompletionBlock: { error, authData in
+//            if error != nil
+//            {
+//                print("Unable to signin user")
+//            }
+//            else
+//            {
+//                let uid = authData.uid
+//                print("Login successful with uid: \(uid)")
+//            }
+//        })
+//    }
+    
+    @IBAction func loginWithFacebook (sender: AnyObject) {
         
+        let myRootRef = Firebase(url:dataURL)
+        
+        let loginWithFacebook = FBSDKLoginManager()
+        print("Logging In")
+        
+        
+        loginWithFacebook.logInWithReadPermissions(["email"], fromViewController: self, handler: {
+            (facebookResult, facebookError) -> Void in
+            if facebookError != nil {
+                print("Facebook login failed. Error \(facebookError)")
+            } else if facebookResult.isCancelled {
+                print("Facebook login was cancelled.")
+            } else {
+                print("You are logged In")
+                
+                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                
+                myRootRef.authWithOAuthProvider("facebook", token: accessToken,
+                    withCompletionBlock: { error, authData in
+                        
+                        if error != nil  {
+                            print("Login Failed. \(error)")
+                        } else {
+                            print("Logged in! \(authData)")
+                            
+                            
+                            let newUser = [
+                                "provider": authData.provider,
+                                "displayName": authData.providerData["displayName"] as? NSString as? String,
+                                "email": authData.providerData["email"] as? NSString as? String
+                            ]
+                            
+                            myRootRef.childByAppendingPath("users")
+                                .childByAppendingPath(authData.uid).setValue(newUser)
+                            
+                            // Display next view controller
+                            let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("PhotoGaleryController"))! as UIViewController
+                            self.presentViewController(nextView, animated: true, completion: nil)
+                            
+                        }
+                })
+            }
+        });
     }
     
     override func viewDidLoad() {
