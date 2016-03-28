@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
                                 .childByAppendingPath(authData.uid).setValue(newUser)
                             
                             // Display next view controller
-                            let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("PhotoGaleryController"))! as UIViewController
+                            let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController"))! as UIViewController
                             self.navigationController?.setViewControllers([nextView], animated: true);
                           //  self.presentViewController(nextView, animated: true, completion: nil)
                             

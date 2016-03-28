@@ -542,6 +542,9 @@ Adewunmi</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="Q7T-42-5Ny" kind="relationship" relationship="rootViewController" id="u6f-ck-VCr"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXK-pn-mkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

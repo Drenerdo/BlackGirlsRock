@@ -81,7 +81,7 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let cell = tableView.dequeueReusableCellWithIdentifier("PlayListCell") as! PlayListCell;
         
         let track = self.trackPage.items[indexPath.row] as! SPTPartialTrack;
-        cell.number.text = "\(indexPath.row)";
+        cell.number.text = "\(indexPath.row+1)";
         cell.name.text = track.name;
         var artistNames = Array<String>();
         for artist in track.artists

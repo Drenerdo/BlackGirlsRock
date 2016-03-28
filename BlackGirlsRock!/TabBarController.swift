@@ -53,6 +53,12 @@ class TabBarController: UIViewController, UINavigationControllerDelegate,UIGestu
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true);
+    }
+    
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         viewController.rootController = self.rootController;
         self.navigationItem.leftBarButtonItem = viewController.navigationItem.leftBarButtonItem;

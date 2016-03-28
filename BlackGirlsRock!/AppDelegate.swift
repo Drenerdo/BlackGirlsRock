@@ -66,6 +66,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if(SPTAuth.defaultInstance().canHandleURL(url))
+        {
+            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error, seesion) -> Void in
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("SpotifyLoginCallback", object: seesion)
+                }
+            )
+            return true;
+        }
+
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
