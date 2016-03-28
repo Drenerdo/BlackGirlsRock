@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MusicController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MusicController: UIViewController, UITableViewDataSource, UITableViewDelegate,SPTAudioStreamingDelegate {
 
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
@@ -17,7 +17,9 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
     var trackPage: SPTListPage!
     
     lazy  var player: SPTAudioStreamingController = {
-        return SPTAudioStreamingController(clientId: SPTAuth.defaultInstance().clientID);
+        let controller = SPTAudioStreamingController(clientId: SPTAuth.defaultInstance().clientID);
+        controller.delegate = self;
+        return controller;
     }()
     
     override func viewDidLoad() {
@@ -49,6 +51,9 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
        
         self.session = notification.object as! SPTSession;
         
+        self.player.loginWithSession(self.session) { (error) -> Void in
+            print("\(error)");
+        };
         /*SPTPlaylistSnapshot.playlistsWithURIs([NSURL(string: "spotify:betnetworks:spotify:playlist:5TbE2NJRHA6X2MScPjlV3x")!], session: self.session) { (error, object) -> Void in
             print(object);
         }*/
@@ -108,9 +113,38 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
-        self.player.playURIs(self.trackPage.items, fromIndex: Int32(indexPath.row)) { (error) -> Void in
-            print("\(error)");
-        }
+        //self.player.playURIs(self.trackPage.items, fromIndex: Int32(indexPath.row)) { (error) -> Void in
+        //    print("\(error)");
+       // }
+    }
+    
+    
+    func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
+        print("\(__FUNCTION__)");
+    }
+    
+    func audioStreamingDidLogout(audioStreaming: SPTAudioStreamingController!) {
+        print("\(__FUNCTION__)");
+    }
+    
+    func audioStreamingDidEncounterTemporaryConnectionError(audioStreaming: SPTAudioStreamingController!) {
+        print("\(__FUNCTION__)");
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didEncounterError error: NSError!) {
+        print("\(__FUNCTION__) \(error.localizedDescription)");
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didReceiveMessage message: String!) {
+        print("\(__FUNCTION__) \(message)");
+    }
+   
+    func audioStreamingDidDisconnect(audioStreaming: SPTAudioStreamingController!) {
+        print("\(__FUNCTION__)");
+    }
+    
+    func audioStreamingDidReconnect(audioStreaming: SPTAudioStreamingController!) {
+        print("\(__FUNCTION__)");
     }
     /*
     // MARK: - Navigation

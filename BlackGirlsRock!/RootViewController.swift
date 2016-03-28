@@ -42,7 +42,7 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
         
         // Do any additional setup after loading the view.
         
-        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: false);
+        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TabBarController")], animated: false);
         
         self.view.addConstraint(NSLayoutConstraint(item: self.menuView, attribute: .Top, relatedBy: .Equal, toItem: self.navigation.navigationBar, attribute: .Bottom, multiplier: 1, constant: 0));
         
