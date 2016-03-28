@@ -19,6 +19,9 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
         for textField in self.textFields
         {
@@ -28,6 +31,10 @@ class CreateAccountViewController: UIViewController {
         self.facebookButton.setBackgroundImage(UIImage.createWith(UIColor.blackColor()), forState: .Normal);
         self.signInButton.setBackgroundImage(UIImage.createWith(UIColor(red: 0.46, green: 0.08, blue: 0.48, alpha: 1.0)), forState: .Normal);
         // Do any additional setup after loading the view.
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
