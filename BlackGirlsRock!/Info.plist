@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>Spotify</string>
+			<string>bgr</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>bgr</string>

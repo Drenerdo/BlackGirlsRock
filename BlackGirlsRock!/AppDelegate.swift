@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(SPTAuth.defaultInstance().canHandleURL(url))
         {
             SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error, seesion) -> Void in
-                print("\(error) \(seesion)")
+                    NSNotificationCenter.defaultCenter().postNotificationName("SpotifyLoginCallback", object: seesion)
                 }
             )
             return true;

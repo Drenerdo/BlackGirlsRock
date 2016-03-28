@@ -23,6 +23,7 @@
 		A58386571C9CC83100B95D10 /* GaleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58386561C9CC83100B95D10 /* GaleryCell.xib */; };
 		A58386591C9CCBBF00B95D10 /* GaleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58386581C9CCBBF00B95D10 /* GaleryCell.swift */; };
 		A583865D1C9CD04900B95D10 /* PhotoFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583865C1C9CD04900B95D10 /* PhotoFolderController.swift */; };
+		A5951D4D1CA9495800615CD7 /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5951D4C1CA9495800615CD7 /* PlayListCell.swift */; };
 		A5D229851C9C7CA0000C2959 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D229841C9C7CA0000C2959 /* RootViewController.swift */; };
 		F126E4C11C9C31AE006C783F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4C01C9C31AE006C783F /* AppDelegate.swift */; };
 		F126E4C61C9C31AE006C783F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F126E4C41C9C31AE006C783F /* Main.storyboard */; };
@@ -75,6 +76,7 @@
 		A58386561C9CC83100B95D10 /* GaleryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GaleryCell.xib; sourceTree = "<group>"; };
 		A58386581C9CCBBF00B95D10 /* GaleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaleryCell.swift; sourceTree = "<group>"; };
 		A583865C1C9CD04900B95D10 /* PhotoFolderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFolderController.swift; sourceTree = "<group>"; };
+		A5951D4C1CA9495800615CD7 /* PlayListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		A5D229841C9C7CA0000C2959 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F126E4BD1C9C31AE006C783F /* BlackGirlsRock!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlackGirlsRock!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F126E4C01C9C31AE006C783F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				A583864E1C9CAB2900B95D10 /* GradientView.swift */,
 				A58386581C9CCBBF00B95D10 /* GaleryCell.swift */,
 				A57A101D1C9D71850073AE9D /* BlackGirlsRock!-Bridging-Header.h */,
+				A5951D4C1CA9495800615CD7 /* PlayListCell.swift */,
 			);
 			path = "BlackGirlsRock!";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				A5D229851C9C7CA0000C2959 /* RootViewController.swift in Sources */,
 				F126E4FC1C9C350B006C783F /* LoginViewController.swift in Sources */,
 				A58386531C9CBAF500B95D10 /* VideoGaleryController.swift in Sources */,
+				A5951D4D1CA9495800615CD7 /* PlayListCell.swift in Sources */,
 				A58386511C9CBAE600B95D10 /* PhotoGaleryController.swift in Sources */,
 				A58386491C9C8D1200B95D10 /* UIImageWithColor.swift in Sources */,
 				A57A10181C9CFBBF0073AE9D /* VideoDetailsController.swift in Sources */,
