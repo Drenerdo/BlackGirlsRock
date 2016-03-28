@@ -248,7 +248,7 @@ class TabBarController: UIViewController, UINavigationControllerDelegate,UIGestu
                     self.tmpContentController.view.removeFromSuperview();
                     self.tmpContentController = nil
                 }
-                if(nextIndex>=0)
+                if(nextIndex>=0&&nextIndex<=2)
                 {
                     self.tmpContentController = self.getControllerForIndex(nextIndex);
                     self.addChildViewController(tmpContentController);

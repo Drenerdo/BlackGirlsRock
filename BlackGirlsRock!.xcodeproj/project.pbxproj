@@ -516,7 +516,7 @@
 				INFOPLIST_FILE = "BlackGirlsRock!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.BGR.BlackGirlsRock-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BGR.BlackGirlsRock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BlackGirlsRock!/BlackGirlsRock!-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -535,7 +535,7 @@
 				INFOPLIST_FILE = "BlackGirlsRock!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.BGR.BlackGirlsRock-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BGR.BlackGirlsRock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BlackGirlsRock!/BlackGirlsRock!-Bridging-Header.h";
 			};

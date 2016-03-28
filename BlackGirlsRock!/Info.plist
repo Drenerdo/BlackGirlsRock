@@ -27,7 +27,7 @@
 			<string>Spotify</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.blackgirlrock.spotify-auth</string>
+				<string>bgr</string>
 			</array>
 		</dict>
 	</array>

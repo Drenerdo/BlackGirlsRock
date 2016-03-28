@@ -25,8 +25,8 @@ class MusicController: UIViewController {
 
     @IBAction func loginToSpotify(sender: AnyObject) {
         let auth = SPTAuth.defaultInstance();
-        auth.clientID = "95df3d3ad1a94590bde59699b9c2d5fc"
-        auth.redirectURL = NSURL(fileURLWithPath: "BRG://returnAfterLogin");
+        auth.clientID = "f3838775154a4333b0ea47f84c04cfea"
+        auth.redirectURL = NSURL(fileURLWithPath: "bgr://callback");
         auth.requestedScopes = [SPTAuthStreamingScope,SPTAuthUserLibraryReadScope];
         UIApplication.sharedApplication().openURL(auth.loginURL);
     }

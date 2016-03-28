@@ -28,12 +28,14 @@ extension UIViewController
     }
 }
 
-class RootViewController: UIViewController, UINavigationControllerDelegate {
+class RootViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet var menuView: UIView!
     @IBOutlet var cancelTouchView: UIView!
     @IBOutlet var menuRightConstraint: NSLayoutConstraint!
+    var menuItems:Array<Dictionary<String,Any>>!;
     var navigation:UINavigationController!
+    @IBOutlet var accountImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,9 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
         
         
         self.setMenu(true, animated: false);
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,5 +107,6 @@ class RootViewController: UIViewController, UINavigationControllerDelegate {
     {
         self.setMenu(self.menuRightConstraint.constant == 0, animated: true)
     }
+    
     
 }
