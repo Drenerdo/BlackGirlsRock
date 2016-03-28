@@ -44,7 +44,7 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
         
         self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: false);
         
-        self.view.addConstraint(NSLayoutConstraint(item: self.menuView, attribute: .Top, relatedBy: .Equal, toItem: self.navigation.navigationBar, attribute: .Bottom, multiplier: 1, constant: 0));
+        //self.view.addConstraint(NSLayoutConstraint(item: self.menuView, attribute: .Top, relatedBy: .Equal, toItem: self.navigation.navigationBar, attribute: .Bottom, multiplier: 1, constant: 0));
         
         
         self.setMenu(true, animated: false);
@@ -85,6 +85,7 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
     
     func setMenu(hide:Bool, animated:Bool)
     {
+
         if ((hide && self.menuRightConstraint.constant != 0) || (!hide && self.menuRightConstraint.constant==0))
         {
             return;
