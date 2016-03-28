@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import FlickrKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
