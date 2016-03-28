@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().translucent = false;
         UINavigationBar.appearance().tintColor = UIColor.whiteColor();
         // Override point for customization after application launch.
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         return true
     }
 
@@ -40,22 +44,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+    /*func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         if(SPTAuth.defaultInstance().canHandleURL(url))
         {
             SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error, seesion) -> Void in
+
                     NSNotificationCenter.defaultCenter().postNotificationName("SpotifyLoginCallback", object: seesion)
                 }
             )
             return true;
         }
         return false;
+    }*/
+    
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
 

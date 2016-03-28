@@ -266,6 +266,9 @@ Adewunmi</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Log in with Facebook" image="facebook_icon"/>
+                                                <connections>
+                                                    <action selector="loginWithFacebook:" destination="WLu-c6-Fvc" eventType="touchUpInside" id="hn7-J0-rDm"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZh-6o-ruP">
                                                 <rect key="frame" x="40" y="327" width="108" height="17"/>
@@ -539,9 +542,6 @@ Adewunmi</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="Q7T-42-5Ny" kind="relationship" relationship="rootViewController" id="8Z7-cg-oGg"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXK-pn-mkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -621,7 +621,7 @@ Adewunmi</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2n-Xx-bwG">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2n-Xx-bwG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-J1-ya8">
@@ -649,7 +649,7 @@ Adewunmi</string>
                                     <constraint firstItem="fwg-J1-ya8" firstAttribute="top" secondItem="F2n-Xx-bwG" secondAttribute="top" id="wdE-jf-67H"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D0Q-Dg-Okb">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D0Q-Dg-Okb">
                                 <rect key="frame" x="0.0" y="135" width="320" height="465"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="BH8-EI-321">
@@ -1392,6 +1392,7 @@ Adewunmi</string>
         <scene sceneID="rBt-YQ-eUi">
             <objects>
                 <navigationController id="ZMm-CW-CcR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bh6-xS-S9M"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="600"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8FE-22-M7R">

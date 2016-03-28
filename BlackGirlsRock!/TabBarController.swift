@@ -147,10 +147,10 @@ class TabBarController: UIViewController, UINavigationControllerDelegate,UIGestu
         {
             if(finalIndex>firstIndex)
             {
-                curIndex++;
+                curIndex += 1;
             }else
             {
-                curIndex--;
+                curIndex -= 1;
             }
             let controller = self.getControllerForIndex(curIndex)!
             self.addChildViewController(controller);
@@ -189,10 +189,10 @@ class TabBarController: UIViewController, UINavigationControllerDelegate,UIGestu
                     controller.view.transform = CGAffineTransformMakeTranslation(self.contentView.frame.size.width*CGFloat(curIndex-finalIndex), 0);
                     if(finalIndex>firstIndex)
                     {
-                        curIndex++;
+                        curIndex += 1;
                     }else
                     {
-                        curIndex--;
+                        curIndex -= 1;
                     }
                 }
                 let controller = self.getControllerForIndex(finalIndex)!
@@ -207,10 +207,10 @@ class TabBarController: UIViewController, UINavigationControllerDelegate,UIGestu
                     controller.removeFromParentViewController();
                     if(finalIndex>firstIndex)
                     {
-                        curIndex++;
+                        curIndex += 1;
                     }else
                     {
-                        curIndex--;
+                        curIndex -= 1;
                     }
                 }
         }

@@ -39,6 +39,9 @@
 		F126E4F91C9C3224006C783F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F126E4F81C9C3224006C783F /* SystemConfiguration.framework */; };
 		F126E4FC1C9C350B006C783F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4FB1C9C350B006C783F /* LoginViewController.swift */; };
 		F126E4FE1C9C38B3006C783F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */; };
+		F1FC2DE91CA9485D00965FFE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC2DE61CA9485D00965FFE /* Bolts.framework */; };
+		F1FC2DEA1CA9485D00965FFE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC2DE71CA9485D00965FFE /* FBSDKCoreKit.framework */; };
+		F1FC2DEB1CA9485D00965FFE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1FC2DE81CA9485D00965FFE /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,9 @@
 		F126E4F81C9C3224006C783F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F126E4FB1C9C350B006C783F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		F1FC2DE61CA9485D00965FFE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F1FC2DE71CA9485D00965FFE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F1FC2DE81CA9485D00965FFE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +113,12 @@
 			files = (
 				A57A101C1C9D12950073AE9D /* AVFoundation.framework in Frameworks */,
 				A57A10141C9CF4500073AE9D /* Social.framework in Frameworks */,
+				F1FC2DEB1CA9485D00965FFE /* FBSDKLoginKit.framework in Frameworks */,
 				F126E4F91C9C3224006C783F /* SystemConfiguration.framework in Frameworks */,
+				F1FC2DEA1CA9485D00965FFE /* FBSDKCoreKit.framework in Frameworks */,
 				F126E4F71C9C321D006C783F /* Security.framework in Frameworks */,
 				A57A101A1C9D126F0073AE9D /* Spotify.framework in Frameworks */,
+				F1FC2DE91CA9485D00965FFE /* Bolts.framework in Frameworks */,
 				F126E4F51C9C3216006C783F /* CFNetwork.framework in Frameworks */,
 				F126E4F31C9C320F006C783F /* libc++.tbd in Frameworks */,
 				F126E4F11C9C3206006C783F /* libicucore.tbd in Frameworks */,
@@ -137,6 +146,9 @@
 		F126E4B41C9C31AE006C783F = {
 			isa = PBXGroup;
 			children = (
+				F1FC2DE61CA9485D00965FFE /* Bolts.framework */,
+				F1FC2DE71CA9485D00965FFE /* FBSDKCoreKit.framework */,
+				F1FC2DE81CA9485D00965FFE /* FBSDKLoginKit.framework */,
 				A57A101B1C9D12950073AE9D /* AVFoundation.framework */,
 				A57A10191C9D126F0073AE9D /* Spotify.framework */,
 				A57A10131C9CF4500073AE9D /* Social.framework */,
@@ -287,7 +299,7 @@
 				TargetAttributes = {
 					F126E4BC1C9C31AE006C783F = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = L438CQKHWL;
+						DevelopmentTeam = 2CR83526NQ;
 					};
 					F126E4D01C9C31AE006C783F = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -513,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -532,6 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
