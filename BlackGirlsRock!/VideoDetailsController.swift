@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import FlickrKit
+import SDWebImage
 
 class VideoDetailsController: UIViewController,UIScrollViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var photo: UIImageView!
     @IBOutlet var descriptionLable: UILabel!
+    
+    var previewImage: UIImage?
+    var imageInfo: Dictionary<NSObject, AnyObject>!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //self.configureScrollView();
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
+        
+        
+        let url = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeOriginal, fromPhotoDictionary: self.imageInfo )
+        print(url)
+        self.photo.sd_setImageWithURL(url, placeholderImage: self.previewImage)
+        self.descriptionLable.text = "CAPTION: \(self.imageInfo["title"] as! String)"
         // Do any additional setup after loading the view.
     }
 
@@ -70,6 +81,10 @@ class VideoDetailsController: UIViewController,UIScrollViewDelegate {
         
         let activity = UIActivityViewController(activityItems: [self.photo], applicationActivities: nil);
         self.presentViewController(activity, animated: true, completion: nil);
+    }
+    @IBAction func playVideo(sender: AnyObject) {
+        let videoURL = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeVideoHDMP4, fromPhotoDictionary: self.imageInfo)
+        print(videoURL);
     }
     /*
     // MARK: - Navigation

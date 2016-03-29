@@ -11,7 +11,7 @@ import UIKit
 class VideoGaleryController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    var images: Array<String> = ["Photo Gallery Copy 3","Photo Gallery","Photo Gallery Copy","Photo Gallery Copy 2"];
+    var images: Array<Dictionary<String,String>> = [["image":"Photo Gallery Copy 3", "tag":"BGR10Video"],["image":"Photo Gallery", "tag":"RedCarpetVideo"],["image":"Photo Gallery Copy", "tag":"GRTVideo"],["image":"Photo Gallery Copy 2", "tag":"BGRXVideo"]];
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,7 @@ class VideoGaleryController: UIViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("GeleryCell") as! GaleryCell;
         //cell.topLabel.text = "Top \(indexPath.row)";
         //cell.bottomLabel.text = "Bottom \(indexPath.row)";
-        cell.imagePreview.image = UIImage(named: self.images[indexPath.row]);
+        cell.imagePreview.image = UIImage(named: self.images[indexPath.row]["image"]!);
         return cell;
     }
     
@@ -42,7 +42,17 @@ class VideoGaleryController: UIViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("ShowVideoFolder", sender: tableView.cellForRowAtIndexPath(indexPath));
+        self.performSegueWithIdentifier("ShowVideoFolder", sender: indexPath);
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowVideoFolder"
+        {
+            let dest = segue.destinationViewController as! VideoFolderController
+            dest.videoTag = self.images[(sender as! NSIndexPath).row]["tag"];
+        }
     }
 
 

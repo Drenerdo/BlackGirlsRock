@@ -832,7 +832,7 @@ Adewunmi</string>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="hJg-Zj-Qho" id="2o9-jU-LSH"/>
-                                            <segue destination="dqS-2R-e9N" kind="push" id="QAM-Ao-9Bt"/>
+                                            <segue destination="dqS-2R-e9N" kind="push" identifier="ShowDetailsPage" id="QAM-Ao-9Bt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -863,6 +863,7 @@ Adewunmi</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
+                        <outlet property="collectionView" destination="Apj-tZ-rEk" id="ETu-so-UOU"/>
                         <outlet property="sectionImage" destination="cwa-SA-Yne" id="TeE-kv-vkp"/>
                         <outlet property="sectionLableOne" destination="Gxu-ka-o9M" id="IKc-zJ-0aW"/>
                         <outlet property="sectionLableTwo" destination="8Xd-EN-j17" id="QfP-vQ-6mZ"/>
@@ -1139,11 +1140,21 @@ Adewunmi</string>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PjotoDetailsTest" translatesAutoresizingMaskIntoConstraints="NO" id="fAQ-OY-s7y">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="365"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6r-fC-LeE">
+                                                <rect key="frame" x="119" y="168" width="46" height="30"/>
+                                                <connections>
+                                                    <action selector="playVideo:" destination="dqS-2R-e9N" eventType="touchUpInside" id="uw4-IV-R2a"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="c6r-fC-LeE" secondAttribute="trailing" id="5RP-lM-a4J"/>
                                             <constraint firstAttribute="bottom" secondItem="fAQ-OY-s7y" secondAttribute="bottom" id="APt-xE-Lnr"/>
+                                            <constraint firstItem="c6r-fC-LeE" firstAttribute="top" secondItem="OFt-HG-rOm" secondAttribute="top" id="AzZ-kd-anY"/>
                                             <constraint firstAttribute="trailing" secondItem="fAQ-OY-s7y" secondAttribute="trailing" id="cOq-At-JFQ"/>
+                                            <constraint firstItem="c6r-fC-LeE" firstAttribute="leading" secondItem="OFt-HG-rOm" secondAttribute="leading" id="hP1-zU-idR"/>
                                             <constraint firstItem="fAQ-OY-s7y" firstAttribute="leading" secondItem="OFt-HG-rOm" secondAttribute="leading" id="nAQ-kT-hdb"/>
+                                            <constraint firstAttribute="bottom" secondItem="c6r-fC-LeE" secondAttribute="bottom" id="o63-eQ-Ogm"/>
                                             <constraint firstItem="fAQ-OY-s7y" firstAttribute="top" secondItem="OFt-HG-rOm" secondAttribute="top" id="zwx-cA-tDx"/>
                                         </constraints>
                                         <connections>
