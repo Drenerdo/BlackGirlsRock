@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08386B6D0534C2D23E4BE7DE /* Pods_BlackGirlsRock_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D008F122C435C8A37B8919BB /* Pods_BlackGirlsRock_.framework */; };
 		4B6DEA341C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */; };
-		99D3249770C3F1E34E53D590 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1EB3641DD2A352C461916F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A57A10121C9CE3080073AE9D /* PhotoDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A10111C9CE3080073AE9D /* PhotoDetailsController.swift */; };
 		A57A10141C9CF4500073AE9D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57A10131C9CF4500073AE9D /* Social.framework */; };
 		A57A10161C9CFB260073AE9D /* VideoFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A10151C9CFB260073AE9D /* VideoFolderController.swift */; };
@@ -40,6 +40,7 @@
 		F126E4F91C9C3224006C783F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F126E4F81C9C3224006C783F /* SystemConfiguration.framework */; };
 		F126E4FC1C9C350B006C783F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4FB1C9C350B006C783F /* LoginViewController.swift */; };
 		F126E4FE1C9C38B3006C783F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */; };
+		F1684A151CAABCB400AB06B0 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1684A141CAABCB400AB06B0 /* BaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,9 @@
 		A5951D4C1CA9495800615CD7 /* PlayListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		A5D229841C9C7CA0000C2959 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CD1EB3641DD2A352C461916F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D008F122C435C8A37B8919BB /* Pods_BlackGirlsRock_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackGirlsRock_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4F6C7938D475AD5F1C4801 /* Pods-BlackGirlsRock!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackGirlsRock!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!.debug.xcconfig"; sourceTree = "<group>"; };
+		EFB727E6BC37A49DC9A8A09F /* Pods-BlackGirlsRock!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackGirlsRock!.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!.release.xcconfig"; sourceTree = "<group>"; };
 		F126E4BD1C9C31AE006C783F /* BlackGirlsRock!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlackGirlsRock!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F126E4C01C9C31AE006C783F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F126E4C51C9C31AE006C783F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		F126E4F81C9C3224006C783F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F126E4FB1C9C350B006C783F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		F1684A141CAABCB400AB06B0 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		FE951AB672443AFF280136E9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +123,7 @@
 				F126E4F31C9C320F006C783F /* libc++.tbd in Frameworks */,
 				F126E4F11C9C3206006C783F /* libicucore.tbd in Frameworks */,
 				F126E4EF1C9C31CB006C783F /* Firebase.framework in Frameworks */,
-				99D3249770C3F1E34E53D590 /* Pods.framework in Frameworks */,
+				08386B6D0534C2D23E4BE7DE /* Pods_BlackGirlsRock_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				CD1EB3641DD2A352C461916F /* Pods.framework */,
+				D008F122C435C8A37B8919BB /* Pods_BlackGirlsRock_.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +158,8 @@
 			children = (
 				372F251820859F205634994C /* Pods.debug.xcconfig */,
 				FE951AB672443AFF280136E9 /* Pods.release.xcconfig */,
+				DB4F6C7938D475AD5F1C4801 /* Pods-BlackGirlsRock!.debug.xcconfig */,
+				EFB727E6BC37A49DC9A8A09F /* Pods-BlackGirlsRock!.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 				A58386581C9CCBBF00B95D10 /* GaleryCell.swift */,
 				A57A101D1C9D71850073AE9D /* BlackGirlsRock!-Bridging-Header.h */,
 				A5951D4C1CA9495800615CD7 /* PlayListCell.swift */,
+				F1684A141CAABCB400AB06B0 /* BaseService.swift */,
 			);
 			path = "BlackGirlsRock!";
 			sourceTree = "<group>";
@@ -250,12 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F126E4E51C9C31AE006C783F /* Build configuration list for PBXNativeTarget "BlackGirlsRock!" */;
 			buildPhases = (
-				71199A6789CFE732F6E59066 /* Check Pods Manifest.lock */,
+				71199A6789CFE732F6E59066 /* 📦 Check Pods Manifest.lock */,
 				F126E4B91C9C31AE006C783F /* Sources */,
 				F126E4BA1C9C31AE006C783F /* Frameworks */,
 				F126E4BB1C9C31AE006C783F /* Resources */,
-				4B6FA267B33F269E74BADBD0 /* Copy Pods Resources */,
-				9B4D73D1427C5FB026FFDCB6 /* Embed Pods Frameworks */,
+				4B6FA267B33F269E74BADBD0 /* 📦 Copy Pods Resources */,
+				9B4D73D1427C5FB026FFDCB6 /* 📦 Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,29 +386,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B6FA267B33F269E74BADBD0 /* Copy Pods Resources */ = {
+		4B6FA267B33F269E74BADBD0 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71199A6789CFE732F6E59066 /* Check Pods Manifest.lock */ = {
+		71199A6789CFE732F6E59066 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,19 +416,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9B4D73D1427C5FB026FFDCB6 /* Embed Pods Frameworks */ = {
+		9B4D73D1427C5FB026FFDCB6 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -437,6 +446,7 @@
 				A58386531C9CBAF500B95D10 /* VideoGaleryController.swift in Sources */,
 				A5951D4D1CA9495800615CD7 /* PlayListCell.swift in Sources */,
 				A58386511C9CBAE600B95D10 /* PhotoGaleryController.swift in Sources */,
+				F1684A151CAABCB400AB06B0 /* BaseService.swift in Sources */,
 				A58386491C9C8D1200B95D10 /* UIImageWithColor.swift in Sources */,
 				A57A10181C9CFBBF0073AE9D /* VideoDetailsController.swift in Sources */,
 				A57A10161C9CFB260073AE9D /* VideoFolderController.swift in Sources */,
@@ -585,11 +595,12 @@
 		};
 		F126E4E61C9C31AE006C783F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372F251820859F205634994C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = DB4F6C7938D475AD5F1C4801 /* Pods-BlackGirlsRock!.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -602,6 +613,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BGR.BlackGirlsRock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BlackGirlsRock!/BlackGirlsRock!-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -609,11 +621,12 @@
 		};
 		F126E4E71C9C31AE006C783F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE951AB672443AFF280136E9 /* Pods.release.xcconfig */;
+			baseConfigurationReference = EFB727E6BC37A49DC9A8A09F /* Pods-BlackGirlsRock!.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -626,6 +639,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BGR.BlackGirlsRock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BlackGirlsRock!/BlackGirlsRock!-Bridging-Header.h";
 			};
 			name = Release;

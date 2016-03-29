@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TeI-UV-eby">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TeI-UV-eby">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -236,7 +236,7 @@ Adewunmi</string>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-113" y="-231"/>
+            <point key="canvasLocation" x="-13" y="-231"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="eWX-SQ-Dr1">
@@ -327,6 +327,19 @@ Adewunmi</string>
                                                     <constraint firstAttribute="height" constant="1" id="8B6-Ev-wm8"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-5u-E6J">
+                                                <rect key="frame" x="40" y="626" width="82" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title="Create Account"/>
+                                                <connections>
+                                                    <segue destination="5dN-kf-y3F" kind="presentation" id="Xr2-yV-dhy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K87-fA-IFq">
+                                                <rect key="frame" x="219" y="626" width="61" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title="Need Help?"/>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwo-bW-Uf7">
                                                 <rect key="frame" x="20" y="486" width="280" height="50"/>
                                                 <constraints>
@@ -334,19 +347,9 @@ Adewunmi</string>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="LOG IN"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meX-5u-E6J">
-                                                <rect key="frame" x="40" y="626" width="82" height="26"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <state key="normal" title="Create Account"/>
                                                 <connections>
-                                                    <action selector="goToCreateAccount:" destination="WLu-c6-Fvc" eventType="touchUpInside" id="CO0-JL-FO0"/>
+                                                    <action selector="loginAction:" destination="WLu-c6-Fvc" eventType="touchUpInside" id="QzL-Bs-SLl"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K87-fA-IFq">
-                                                <rect key="frame" x="219" y="626" width="61" height="26"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <state key="normal" title="Need Help?"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -418,7 +421,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJi-OL-MdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="529"/>
+            <point key="canvasLocation" x="-122" y="766.5"/>
         </scene>
         <!--BLACK GIRLS ROCK!-->
         <scene sceneID="zW9-CD-Rr7">
@@ -528,7 +531,7 @@ Adewunmi</string>
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="460" y="1509"/>
+            <point key="canvasLocation" x="27" y="1623"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="clo-ac-0fc">
@@ -549,7 +552,7 @@ Adewunmi</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXK-pn-mkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="2174"/>
+            <point key="canvasLocation" x="27" y="2360"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nnH-Pt-jqm">
@@ -570,7 +573,7 @@ Adewunmi</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RHm-yb-Bti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="2174"/>
+            <point key="canvasLocation" x="538" y="2360"/>
         </scene>
         <!--Photo Galery Controller-->
         <scene sceneID="iWE-2p-mBo">
@@ -611,7 +614,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xiD-M7-qcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="2836"/>
+            <point key="canvasLocation" x="27" y="3068"/>
         </scene>
         <!--Photo Folder Controller-->
         <scene sceneID="Zf7-8g-ird">
@@ -720,7 +723,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U88-N6-ov1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="3510"/>
+            <point key="canvasLocation" x="27" y="3828"/>
         </scene>
         <!--Video Folder Controller-->
         <scene sceneID="mo4-ot-9Mw">
@@ -760,7 +763,7 @@ Adewunmi</string>
                                             <constraint firstItem="cwa-SA-Yne" firstAttribute="leading" secondItem="z0W-Jv-2q1" secondAttribute="leading" id="tV2-8W-3N7"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCY-uU-p6u">
+                                    <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCY-uU-p6u">
                                         <rect key="frame" x="130" y="46" width="61" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxu-ka-o9M">
@@ -871,7 +874,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3W-WD-mN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="3503"/>
+            <point key="canvasLocation" x="538" y="3833"/>
         </scene>
         <!--Photo Details Controller-->
         <scene sceneID="Ndz-fT-d4F">
@@ -986,13 +989,6 @@ Adewunmi</string>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfw-Dz-1sG">
                                 <rect key="frame" x="0.0" y="500" width="320" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzQ-VF-wJf">
-                                        <rect key="frame" x="284" y="10" width="21" height="22"/>
-                                        <state key="normal" image="Forward Arrow-50"/>
-                                        <connections>
-                                            <action selector="clickOnShare:" destination="gV7-5y-6dR" eventType="touchUpInside" id="2LA-4s-Ti6"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-9X-d3A">
                                         <rect key="frame" x="256" y="12" width="18" height="22"/>
                                         <state key="normal" image="head"/>
@@ -1004,6 +1000,13 @@ Adewunmi</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzQ-VF-wJf">
+                                        <rect key="frame" x="282" y="9" width="21" height="22"/>
+                                        <state key="normal" image="Forward Arrow-50"/>
+                                        <connections>
+                                            <action selector="clickOnShare:" destination="gV7-5y-6dR" eventType="touchUpInside" id="2LA-4s-Ti6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1050,7 +1053,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJQ-97-ic6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="4211"/>
+            <point key="canvasLocation" x="27" y="4565"/>
         </scene>
         <!--Video Details Controller-->
         <scene sceneID="QK0-j7-mbm">
@@ -1239,7 +1242,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yda-bR-D1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="4211"/>
+            <point key="canvasLocation" x="538" y="4619"/>
         </scene>
         <!--Video Galery Controller-->
         <scene sceneID="srq-Fh-Shs">
@@ -1280,7 +1283,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4U-4a-TXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="2836"/>
+            <point key="canvasLocation" x="538" y="3126"/>
         </scene>
         <!--Music Controller-->
         <scene sceneID="Rfs-AP-1AM">
@@ -1404,7 +1407,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLq-y5-GLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="809" y="2174"/>
+            <point key="canvasLocation" x="538" y="1623"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rBt-YQ-eUi">
@@ -1420,7 +1423,7 @@ Adewunmi</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDg-Zf-JbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="-231"/>
+            <point key="canvasLocation" x="565" y="-231"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="xqD-KK-nER">
@@ -1566,6 +1569,9 @@ Adewunmi</string>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="SIGN UP"/>
+                                                <connections>
+                                                    <action selector="createAccountAction:" destination="5dN-kf-y3F" eventType="touchUpInside" id="H8D-Hg-rJx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6f-8g-mvF">
                                                 <rect key="frame" x="30" y="863" width="32" height="26"/>
@@ -1673,8 +1679,14 @@ Adewunmi</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="904"/>
                     <connections>
+                        <outlet property="createAccountAction" destination="sPD-iP-8fO" id="cB5-H0-V7m"/>
+                        <outlet property="emailField" destination="1zA-8Z-zAk" id="AN8-cl-aUg"/>
                         <outlet property="facebookButton" destination="pLb-2B-Wmy" id="eAl-Li-hmc"/>
+                        <outlet property="firstnameField" destination="57l-Jg-A4F" id="UfM-bU-Ns4"/>
+                        <outlet property="lastnameField" destination="mEB-a0-NYU" id="3HA-Zs-Ghu"/>
+                        <outlet property="passwordField" destination="ZKh-RL-ncE" id="YW9-X7-qz9"/>
                         <outlet property="signInButton" destination="sPD-iP-8fO" id="aDU-i9-iib"/>
+                        <outlet property="signupButton" destination="sPD-iP-8fO" id="moT-yn-OBn"/>
                         <outletCollection property="textFields" destination="57l-Jg-A4F" collectionClass="NSMutableArray" id="uL5-3y-W6S"/>
                         <outletCollection property="textFields" destination="mEB-a0-NYU" collectionClass="NSMutableArray" id="hgB-tP-2BQ"/>
                         <outletCollection property="textFields" destination="sVl-N5-zbJ" collectionClass="NSMutableArray" id="5Wh-Lj-k00"/>
@@ -1684,7 +1696,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yns-WN-EBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="511.5"/>
+            <point key="canvasLocation" x="538" y="696"/>
         </scene>
     </scenes>
     <resources>

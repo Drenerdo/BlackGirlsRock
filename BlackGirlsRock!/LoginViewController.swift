@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
-    private let dataURL = "https://bgr-app.firebaseio.com"
+    private let dataURL = "https://bgr-app.firebaseio.com/"
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -21,23 +21,48 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet var loginWithFacebook: UIButton!
+    @IBOutlet weak var loginWithFacebook: UIButton!
 
-    @IBOutlet var loginButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
-//    @IBAction func handleLogin(sender: AnyObject) {
-//        ref.authUser(emailTextField.text!, password: passwordTextField.text!, withCompletionBlock: { error, authData in
-//            if error != nil
-//            {
-//                print("Unable to signin user")
-//            }
-//            else
-//            {
-//                let uid = authData.uid
-//                print("Login successful with uid: \(uid)")
-//            }
-//        })
-//    }
+    @IBAction func loginAction(sender: AnyObject)
+    {
+        let email = self.emailTextField.text
+        let password = self.passwordTextField.text
+        
+        if email != "" && password != ""
+        {
+            FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData) -> Void in
+                if error == nil
+                {
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                    
+                    print("Logged In")
+                    
+                    // This action happens when a users credentials are successful
+                    let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController"))! as UIViewController
+                    self.navigationController?.setViewControllers([nextView], animated: true);
+                }
+                else
+                {
+                    print(error)
+                }
+            })
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "Enter Email and Password", preferredStyle: .Alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+
     
     @IBAction func loginWithFacebook (sender: AnyObject) {
         
@@ -103,6 +128,7 @@ class LoginViewController: UIViewController {
         
     }
     
+    
     func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -129,11 +155,8 @@ class LoginViewController: UIViewController {
         self.curtextfield = textField;
         return true;
     }
-
-    @IBAction func goToCreateAccount(sender: AnyObject) {
-        self.navigationController?.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateAccountViewController")], animated: true)
-
-    }
+    
+    
     /*
     // MARK: - Navigation
 

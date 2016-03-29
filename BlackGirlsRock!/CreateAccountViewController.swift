@@ -11,11 +11,67 @@ import Firebase
 
 class CreateAccountViewController: UIViewController {
     
-    let ref = Firebase(url: "https://bgr-production.firebaseio.com")
+    let ref = Firebase(url: "https://bgr-app.firebaseio.com/")
 
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet var facebookButton: UIButton!
+    
+    @IBOutlet weak var firstnameField: UITextField!
+    
+    @IBOutlet weak var lastnameField: UITextField!
+    
+    
+    @IBOutlet weak var emailField: UITextField!
+    
+    
+    @IBOutlet weak var passwordField: UITextField!
+    
+    
+    @IBAction func createAccountAction(sender: AnyObject)
+    {
+        let email = self.emailField.text
+        let password = self.passwordField.text
+        
+        if email != "" && password != ""
+        {
+            FIREBASE_REF.createUser(email, password: password, withValueCompletionBlock: { (error, authData) -> Void in
+                
+                if error == nil
+                {
+                    FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData) -> Void in
+                        if error == nil
+                        {
+                            NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                            print("Account Created!")
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        }
+                        else
+                        {
+                            print(error)
+                        }
+                    })
+                }
+                else
+                {
+                    print(error)
+                }
+                
+            })
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "Enter email and password", preferredStyle: .Alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,7 +12,7 @@ import UIKit
 class PhotoGaleryController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var loginButton: UIButton!
+//    @IBOutlet var loginButton: UIButton!
     var images: Array<Dictionary<String,String>> = [["image":"Photo1 Gallery Copy 3","tag":"BGR10Photo"],["image":"Photo1 Gallery","tag":"RedCarpetPhoto"],["image":"Photo1 Gallery Copy","tag":"GRTPhoto"],["image":"Photo1 Gallery Copy 2","tag":"BGRXPhoto"]];
     override func viewDidLoad() {
         super.viewDidLoad()
