@@ -109,5 +109,8 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
         self.setMenu(self.menuRightConstraint.constant == 0, animated: true)
     }
     
-    
+    @IBAction func logOut(sender: AnyObject) {
+        self.setMenu(true, animated: true)
+        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: false);
+    }    
 }
