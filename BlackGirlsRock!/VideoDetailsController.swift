@@ -25,10 +25,10 @@ class VideoDetailsController: UIViewController,UIScrollViewDelegate {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
         
         
-        let url = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeOriginal, fromPhotoDictionary: self.imageInfo )
+        let url = NSURL.flickrPhotoURL(FKPhotoSizeOriginal, fromPhotoDictionary: self.imageInfo)
         print(url)
         self.photo.sd_setImageWithURL(url, placeholderImage: self.previewImage)
-        self.descriptionLable.text = "CAPTION: \(self.imageInfo["title"] as! String)"
+        self.descriptionLable.text = "\(self.imageInfo["title"] as! String)"
         // Do any additional setup after loading the view.
     }
 

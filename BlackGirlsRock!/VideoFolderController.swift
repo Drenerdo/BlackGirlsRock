@@ -24,7 +24,7 @@ class VideoFolderController: UIViewController,UICollectionViewDataSource, UIColl
         // Do any additional setup after loading the view.
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
         
-        FlickrKit.sharedFlickrKit().call("flickr.photos.search", args: ["tags":self.videoTag!]) { (response, error) -> Void in
+        FlickrKit.sharedFlickrKit().call("flickr.photos.search", args: ["tags":self.videoTag!,"extras":"original_format"]) { (response, error) -> Void in
             
             print("\(response)");
             if response["stat"] as? String == "ok"

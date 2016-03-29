@@ -72,3 +72,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension NSURL
+{
+    class func flickrPhotoURL(forSize:FKPhotoSize, fromPhotoDictionary photoDict:NSDictionary) -> NSURL
+    {
+        var photoID = photoDict["id"] as? String;
+        if (photoID == nil) {
+            photoID = photoDict["primary"]  as? String; //sets return this
+        }
+        
+        //Find possible server
+        let server = photoDict["server"] as! String;
+        
+        //Find possible farm
+        let farm = photoDict["farm"]?.stringValue;
+        
+        //Find possible secret
+        var type: String = "jpg"
+        var secret = photoDict["secret"]  as! String;
+        if forSize == FKPhotoSizeOriginal
+        {
+            type = photoDict["originalformat"]  as! String;
+            secret = photoDict["originalsecret"]  as! String;
+        }
+        return NSURL.flickrPhotoURL(forSize, photoID: photoID!, server: server, secret: secret, farm: farm!, type: type);
+    }
+    
+    class func flickrPhotoURL(forSize:FKPhotoSize, photoID:String, server:String, secret:String, farm:String, type: String) ->
+NSURL    {
+    
+    let photoSource = "https://static.flickr.com/";
+    
+    var URLString = "https://";
+    if (farm.characters.count > 0) {
+        URLString += "farm\(farm)."
+    }
+    
+    URLString += photoSource.substringFromIndex(URLString.startIndex.advancedBy(8))
+
+    URLString += "\(server)/\(photoID)_\(secret)"
+    
+    
+    let sizeKey = FKIdentifierForSize(forSize);
+    URLString += "_\(sizeKey).\(type)";
+   
+    
+    return NSURL(string: URLString)!;
+   /* - (NSURL *) photoURLForSize:(FKPhotoSize)size photoID:(NSString *)photoID server:(NSString *)server secret:(NSString *)secret farm:(NSString *)farm {
+    // https://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_[mstb].jpg
+    // https://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
+    
+    */
+    }
+
+}
+
