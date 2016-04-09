@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
-    private let dataURL = "https://bgr-app.firebaseio.com/"
+    //private let dataURL = "https://bgr-app.firebaseio.com/"
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -35,8 +35,6 @@ class LoginViewController: UIViewController {
             FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData) -> Void in
                 if error == nil
                 {
-                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
-                    
                     print("Logged In")
                     
                     // This action happens when a users credentials are successful
@@ -66,7 +64,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginWithFacebook (sender: AnyObject) {
         
-        let myRootRef = Firebase(url:dataURL)
+        //let myRootRef = Firebase(url:dataURL)
         
         let loginWithFacebook = FBSDKLoginManager()
         print("Logging In")
@@ -83,7 +81,7 @@ class LoginViewController: UIViewController {
                 
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 
-                myRootRef.authWithOAuthProvider("facebook", token: accessToken,
+                FIREBASE_REF.authWithOAuthProvider("facebook", token: accessToken,
                     withCompletionBlock: { error, authData in
                         
                         if error != nil  {
@@ -95,17 +93,20 @@ class LoginViewController: UIViewController {
                             let newUser = [
                                 "provider": authData.provider,
                                 "displayName": authData.providerData["displayName"] as? NSString as? String,
-                                "email": authData.providerData["email"] as? NSString as? String
+                                "email": authData.providerData["email"] as? NSString as? String,
+                                "profileImage":  authData.providerData["profileImageURL"] as? String,
+                                "firstName": authData.providerData["cachedUserProfile"]?["first_name"] as? String,
+                                "lastName": authData.providerData["cachedUserProfile"]?["last_name"] as? String,
                             ]
                             
-                            myRootRef.childByAppendingPath("users")
+                            FIREBASE_REF.childByAppendingPath("users")
                                 .childByAppendingPath(authData.uid).setValue(newUser)
                             
                             // Display next view controller
-                            let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController"))! as UIViewController
-                            self.navigationController?.setViewControllers([nextView], animated: true);
-                          //  self.presentViewController(nextView, animated: true, completion: nil)
+                           /* let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController"))! as UIViewController
+                            self.navigationController?.setViewControllers([nextView], animated: true);*/
                             
+                            //self.rootController?.changeUserInfo();
                         }
                 })
             }

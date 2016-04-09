@@ -18,13 +18,15 @@ class PhotoFolderController: UIViewController,UICollectionViewDataSource, UIColl
     
     @IBOutlet var collectionView: UICollectionView!
     var photosTag: NSString?;
+    var titleImage: String?;
     
     var photos: NSMutableArray = NSMutableArray();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: #selector(PhotoFolderController.backAction))
+        self.sectionImage.image = UIImage(named: self.titleImage!);
         
         FlickrKit.sharedFlickrKit().call("flickr.photos.search", args: ["tags":self.photosTag!,"extras":"original_format"]) { (response, error) -> Void in
             

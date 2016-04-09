@@ -29,7 +29,9 @@ extension UIViewController
 }
 
 class RootViewController: UIViewController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
+    @IBOutlet var userName: UILabel!
     
+    @IBOutlet var launchImage: UIImageView!
     @IBOutlet var menuView: UIView!
     @IBOutlet var cancelTouchView: UIView!
     @IBOutlet var menuRightConstraint: NSLayoutConstraint!
@@ -42,15 +44,40 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
         
         // Do any additional setup after loading the view.
         
-        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: false);
-        
-        //self.view.addConstraint(NSLayoutConstraint(item: self.menuView, attribute: .Top, relatedBy: .Equal, toItem: self.navigation.navigationBar, attribute: .Bottom, multiplier: 1, constant: 0));
-        
-        
+        //self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: false);
+        self.launchImage.hidden = false;
+        FIREBASE_REF.observeAuthEventWithBlock { (authData) in
+            //print(authData);
+            if authData != nil
+            {
+                FIREBASE_REF.childByAppendingPath("users").childByAppendingPath(authData.uid).observeEventType(.Value, withBlock: { (snapshot) in
+                        if let url = snapshot.value.valueForKey("profileImage") as? String
+                        {
+                            self.accountImage.sd_setImageWithURL(NSURL(string: url));
+                        }
+                        
+                        let fn = snapshot.value["firstName"] as? String
+                        let ln = snapshot.value["lastName"] as? String
+                        
+                        if ln != nil && fn != nil
+                        {
+                            self.userName.text = "\(fn!)\r\n\(ln!)"
+                        }
+                        self.launchImage.hidden = true;
+                        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TabBarController")], animated: true);
+                    }, withCancelBlock: { (error) in
+                });
+            }else
+            {
+                self.launchImage.hidden = true;
+                self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: true);
+            }
+        }
+
         self.setMenu(true, animated: false);
         
-        
-        
+        self.accountImage.layer.cornerRadius = self.accountImage.frame.size.width/2.0;
+        self.accountImage.clipsToBounds = true;
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,7 +106,7 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
         
         if(viewController.navigationItem.rightBarButtonItem == nil)
         {
-            viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburger"), style: .Plain, target: self, action: Selector("showHideMenu"));
+            viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburger"), style: .Plain, target: self, action: #selector(RootViewController.showHideMenu));
         }
     }
     
@@ -111,6 +138,10 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
     
     @IBAction func logOut(sender: AnyObject) {
         self.setMenu(true, animated: true)
-        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")], animated: false);
-    }    
+        FIREBASE_REF.unauth();
+        SPTAuth.defaultInstance().session = nil;
+    }
+    @IBAction func openShop(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://blackgirlsrock.gomerch.com/")!);
+    }
 }

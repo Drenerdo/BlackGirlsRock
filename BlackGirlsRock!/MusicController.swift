@@ -28,7 +28,33 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.hidden = true;
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("spotifyLogin:"), name: "SpotifyLoginCallback", object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MusicController.spotifyLogin(_:)), name: "SpotifyLoginCallback", object: nil);
+        
+        if(SPTAuth.defaultInstance().session != nil)
+        {
+            self.loginButton.hidden = true;
+            self.loadingIndicator.startAnimating();
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
+                SPTAuth.defaultInstance().renewSession(SPTAuth.defaultInstance().session, callback: { (error, session) in
+                    dispatch_sync(dispatch_get_main_queue(), { 
+                        if(session != nil)
+                        {
+                            self.updateWithSession(session);
+                        }else if(error == nil)
+                        {
+                            self.updateWithSession(SPTAuth.defaultInstance().session);
+                        }else
+                        {
+                            self.loadingIndicator.stopAnimating();
+                            self.loginButton.hidden = false;
+                        }
+                    })
+                    
+                })
+            })
+            
+        }
+        //SPTAuth.defaultInstance().renewSession(<#T##session: SPTSession!##SPTSession!#>, callback: <#T##SPTAuthCallback!##SPTAuthCallback!##(NSError!, SPTSession!) -> Void#>)
         // Do any additional setup after loading the view.
     }
 
@@ -52,14 +78,17 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
     func spotifyLogin(notification:NSNotification)
     {
        
-        self.session = notification.object as! SPTSession;
-        
+        self.updateWithSession(notification.object as! SPTSession);
+    }
+    
+    func updateWithSession(session: SPTSession) {
+        self.session = session;
         self.player.loginWithSession(self.session) { (error) -> Void in
             print("\(error)");
         };
         /*SPTPlaylistSnapshot.playlistsWithURIs([NSURL(string: "spotify:betnetworks:spotify:playlist:5TbE2NJRHA6X2MScPjlV3x")!], session: self.session) { (error, object) -> Void in
-            print(object);
-        }*/
+         print(object);
+         }*/
         do{
             let request = try SPTRequest.createRequestForURL(NSURL(string: "https://api.spotify.com/v1/users/betnetworks/playlists/5TbE2NJRHA6X2MScPjlV3x")!, withAccessToken: self.session.accessToken, httpMethod: "GET", values: nil, valueBodyIsJSON: false, sendDataAsQueryString: false);
             
@@ -77,12 +106,7 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }catch {
             print(error)
         }
-        /*
-        SPTPlaylistList.playlistsForUserWithSession(self.session) { (error, playlist) -> Void in
-            self.tableView.hidden = false;
-            self.playList = playlist as! SPTPlaylistList;
-            self.tableView.reloadData();
-        }*/
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

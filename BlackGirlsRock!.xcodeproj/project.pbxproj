@@ -145,6 +145,15 @@
 		1C03B70B86389D19A4C51DF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A57A101B1C9D12950073AE9D /* AVFoundation.framework */,
+				A57A10191C9D126F0073AE9D /* Spotify.framework */,
+				A57A10131C9CF4500073AE9D /* Social.framework */,
+				F126E4F81C9C3224006C783F /* SystemConfiguration.framework */,
+				F126E4F61C9C321D006C783F /* Security.framework */,
+				F126E4F41C9C3216006C783F /* CFNetwork.framework */,
+				F126E4F21C9C320F006C783F /* libc++.tbd */,
+				F126E4F01C9C3206006C783F /* libicucore.tbd */,
+				F126E4EE1C9C31CB006C783F /* Firebase.framework */,
 				CD1EB3641DD2A352C461916F /* Pods.framework */,
 				F8F2B46144BB8A760CE42682 /* Pods_BlackGirlsRock_.framework */,
 			);
@@ -163,15 +172,6 @@
 		F126E4B41C9C31AE006C783F = {
 			isa = PBXGroup;
 			children = (
-				A57A101B1C9D12950073AE9D /* AVFoundation.framework */,
-				A57A10191C9D126F0073AE9D /* Spotify.framework */,
-				A57A10131C9CF4500073AE9D /* Social.framework */,
-				F126E4F81C9C3224006C783F /* SystemConfiguration.framework */,
-				F126E4F61C9C321D006C783F /* Security.framework */,
-				F126E4F41C9C3216006C783F /* CFNetwork.framework */,
-				F126E4F21C9C320F006C783F /* libc++.tbd */,
-				F126E4F01C9C3206006C783F /* libicucore.tbd */,
-				F126E4EE1C9C31CB006C783F /* Firebase.framework */,
 				F126E4BF1C9C31AE006C783F /* BlackGirlsRock! */,
 				F126E4D41C9C31AE006C783F /* BlackGirlsRock!Tests */,
 				F126E4DF1C9C31AE006C783F /* BlackGirlsRock!UITests */,
@@ -261,6 +261,7 @@
 				F126E4BB1C9C31AE006C783F /* Resources */,
 				4B6FA267B33F269E74BADBD0 /* 📦 Copy Pods Resources */,
 				9B4D73D1427C5FB026FFDCB6 /* 📦 Embed Pods Frameworks */,
+				4D5286B753967C78147D44FE /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +396,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D5286B753967C78147D44FE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		71199A6789CFE732F6E59066 /* 📦 Check Pods Manifest.lock */ = {

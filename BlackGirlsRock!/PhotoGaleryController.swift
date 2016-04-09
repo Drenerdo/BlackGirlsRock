@@ -13,7 +13,7 @@ class PhotoGaleryController: UIViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet var tableView: UITableView!
 //    @IBOutlet var loginButton: UIButton!
-    var images: Array<Dictionary<String,String>> = [["image":"Photo1 Gallery Copy 3","tag":"BGR10Photo"],["image":"Photo1 Gallery","tag":"RedCarpetPhoto"],["image":"Photo1 Gallery Copy","tag":"GRTPhoto"],["image":"Photo1 Gallery Copy 2","tag":"BGRXPhoto"]];
+    var images: Array<Dictionary<String,String>> = [["image":"Photo1 Gallery Copy 3","tag":"BGR10Photo","titleImage":"Photo Gallery Copy 4"],["image":"Photo1 Gallery","tag":"RedCarpetPhoto","titleImage":"Red Carpet Photo Section"],["image":"Photo1 Gallery Copy","tag":"GRTPhoto","titleImage":"Girls Rock Tech Photo"],["image":"Photo1 Gallery Copy 2","tag":"BGRXPhoto","titleImage":"BGR! Experience Photo"]];
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,6 +58,7 @@ class PhotoGaleryController: UIViewController, UITableViewDataSource, UITableVie
         {
             let dest = segue.destinationViewController as! PhotoFolderController
             dest.photosTag = self.images[(sender as! NSIndexPath).row]["tag"];
+            dest.titleImage = self.images[(sender as! NSIndexPath).row]["titleImage"];
         }
     }
 

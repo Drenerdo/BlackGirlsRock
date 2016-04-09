@@ -11,7 +11,7 @@ import UIKit
 class VideoGaleryController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    var images: Array<Dictionary<String,String>> = [["image":"Photo Gallery Copy 3", "tag":"BGR10Video"],["image":"Photo Gallery", "tag":"RedCarpetVideo"],["image":"Photo Gallery Copy", "tag":"GRTVideo"],["image":"Photo Gallery Copy 2", "tag":"BGRXVideo"]];
+    var images: Array<Dictionary<String,String>> = [["image":"Photo Gallery Copy 3", "tag":"BGR10Video","titleImage":"BGR!10 Video Section"],["image":"Photo Gallery", "tag":"RedCarpetVideo","titleImage":"Red Carpet Video Section"],["image":"Photo Gallery Copy", "tag":"GRTVideo","titleImage":"Girls Rock Tech! Video"],["image":"Photo Gallery Copy 2", "tag":"BGRXVideo","titleImage":"BGR! Experience Video"]];
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +53,7 @@ class VideoGaleryController: UIViewController {
         {
             let dest = segue.destinationViewController as! VideoFolderController
             dest.videoTag = self.images[(sender as! NSIndexPath).row]["tag"];
+            dest.titleImage = self.images[(sender as! NSIndexPath).row]["titleImage"];
         }
     }
 

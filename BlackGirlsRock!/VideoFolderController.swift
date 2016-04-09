@@ -19,10 +19,14 @@ class VideoFolderController: UIViewController,UICollectionViewDataSource, UIColl
     @IBOutlet var collectionView: UICollectionView!
     var videos: NSMutableArray = NSMutableArray();
     var videoTag: String?
+    
+    var titleImage: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: #selector(VideoFolderController.backAction))
+        
+        self.sectionImage.image = UIImage(named: self.titleImage!);
         
         FlickrKit.sharedFlickrKit().call("flickr.photos.search", args: ["tags":self.videoTag!,"extras":"original_format"]) { (response, error) -> Void in
             
