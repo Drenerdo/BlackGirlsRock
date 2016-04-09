@@ -113,7 +113,6 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let cell = tableView.dequeueReusableCellWithIdentifier("PlayListCell") as! PlayListCell;
         
         let track = self.trackPage.items[indexPath.row] as! SPTPartialTrack;
-        cell.number.text = "\(indexPath.row+1)";
         cell.name.text = track.name;
         var artistNames = Array<String>();
         for artist in track.artists
@@ -124,9 +123,9 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
         //let array = track.artists as NSArray;
         
         cell.artist.text = artistNames.joinWithSeparator(", ");
-        let min = NSInteger(track.duration/60);
-        let second = NSInteger(track.duration%60);
-        cell.duration.text = "\(min):\(second)";
+        if track.album.smallestCover != nil{
+            cell.songImage.sd_setImageWithURL(track.album.smallestCover.imageURL);
+        }
         return cell;
     }
     
@@ -183,6 +182,10 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func audioStreamingDidReconnect(audioStreaming: SPTAudioStreamingController!) {
         print("\(#function)");
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80;
     }
     /*
     // MARK: - Navigation

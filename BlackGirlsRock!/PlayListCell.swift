@@ -15,10 +15,14 @@ class PlayListCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var artist: UILabel!
     @IBOutlet weak var duration: UILabel!
+    @IBOutlet var songImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-
+        self.songImage.layer.cornerRadius = self.songImage.frame.size.width/2.0
+        self.songImage.clipsToBounds = true;
+        self.songImage.setShowActivityIndicatorView(true);
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
