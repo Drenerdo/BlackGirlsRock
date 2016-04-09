@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TeI-UV-eby">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TeI-UV-eby">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -335,7 +335,7 @@ Adewunmi</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <state key="normal" title="Create Account"/>
                                                 <connections>
-                                                    <segue destination="5dN-kf-y3F" kind="presentation" id="Xr2-yV-dhy"/>
+                                                    <action selector="goToCreateAccount:" destination="WLu-c6-Fvc" eventType="touchUpInside" id="TSO-nR-Eh3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K87-fA-IFq">
@@ -424,7 +424,7 @@ Adewunmi</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJi-OL-MdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="766.5"/>
+            <point key="canvasLocation" x="-178" y="687.5"/>
         </scene>
         <!--BLACK GIRLS ROCK!-->
         <scene sceneID="zW9-CD-Rr7">
@@ -1682,14 +1682,12 @@ Adewunmi</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="904"/>
                     <connections>
-                        <outlet property="createAccountAction" destination="sPD-iP-8fO" id="cB5-H0-V7m"/>
                         <outlet property="emailField" destination="1zA-8Z-zAk" id="AN8-cl-aUg"/>
                         <outlet property="facebookButton" destination="pLb-2B-Wmy" id="eAl-Li-hmc"/>
                         <outlet property="firstnameField" destination="57l-Jg-A4F" id="UfM-bU-Ns4"/>
                         <outlet property="lastnameField" destination="mEB-a0-NYU" id="3HA-Zs-Ghu"/>
                         <outlet property="passwordField" destination="ZKh-RL-ncE" id="YW9-X7-qz9"/>
                         <outlet property="signInButton" destination="sPD-iP-8fO" id="aDU-i9-iib"/>
-                        <outlet property="signupButton" destination="sPD-iP-8fO" id="moT-yn-OBn"/>
                         <outletCollection property="textFields" destination="57l-Jg-A4F" collectionClass="NSMutableArray" id="uL5-3y-W6S"/>
                         <outletCollection property="textFields" destination="mEB-a0-NYU" collectionClass="NSMutableArray" id="hgB-tP-2BQ"/>
                         <outletCollection property="textFields" destination="sVl-N5-zbJ" collectionClass="NSMutableArray" id="5Wh-Lj-k00"/>

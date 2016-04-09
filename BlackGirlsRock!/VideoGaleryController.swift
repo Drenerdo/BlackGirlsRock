@@ -34,6 +34,7 @@ class VideoGaleryController: UIViewController {
         //cell.topLabel.text = "Top \(indexPath.row)";
         //cell.bottomLabel.text = "Bottom \(indexPath.row)";
         cell.imagePreview.image = UIImage(named: self.images[indexPath.row]["image"]!);
+        cell.contentView.backgroundColor = UIColor(red: 0.5, green: 0.07, blue: 0.88, alpha: 1.0);
         return cell;
     }
     

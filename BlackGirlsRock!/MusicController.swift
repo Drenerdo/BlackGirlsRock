@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MusicController: UIViewController, UITableViewDataSource, UITableViewDelegate,SPTAudioStreamingDelegate {
 
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
+    
+    var previewPlayer:AVPlayer?;
     var session:SPTSession!
     var trackPage: SPTListPage!
     
@@ -113,6 +116,17 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
+        
+        let track = self.trackPage.items[indexPath.row] as! SPTPartialTrack;
+        if self.previewPlayer != nil
+        {
+            self.previewPlayer?.pause();
+        }
+        let player = AVPlayer(URL:track.previewURL);
+        self.previewPlayer = player
+        self.previewPlayer!.play();
+        
+        
         //self.player.playURIs(self.trackPage.items, fromIndex: Int32(indexPath.row)) { (error) -> Void in
         //    print("\(error)");
        // }
@@ -120,31 +134,31 @@ class MusicController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     func audioStreamingDidLogin(audioStreaming: SPTAudioStreamingController!) {
-        print("\(__FUNCTION__)");
+        print("\(#function)");
     }
     
     func audioStreamingDidLogout(audioStreaming: SPTAudioStreamingController!) {
-        print("\(__FUNCTION__)");
+        print("\(#function)");
     }
     
     func audioStreamingDidEncounterTemporaryConnectionError(audioStreaming: SPTAudioStreamingController!) {
-        print("\(__FUNCTION__)");
+        print("\(#function)");
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didEncounterError error: NSError!) {
-        print("\(__FUNCTION__) \(error.localizedDescription)");
+        print("\(#function) \(error.localizedDescription)");
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didReceiveMessage message: String!) {
-        print("\(__FUNCTION__) \(message)");
+        print("\(#function) \(message)");
     }
    
     func audioStreamingDidDisconnect(audioStreaming: SPTAudioStreamingController!) {
-        print("\(__FUNCTION__)");
+        print("\(#function)");
     }
     
     func audioStreamingDidReconnect(audioStreaming: SPTAudioStreamingController!) {
-        print("\(__FUNCTION__)");
+        print("\(#function)");
     }
     /*
     // MARK: - Navigation
