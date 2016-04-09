@@ -144,4 +144,10 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
     @IBAction func openShop(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string: "http://blackgirlsrock.gomerch.com/")!);
     }
+    @IBAction func showMyAccount(sender: AnyObject) {
+        self.setMenu(true, animated: true);
+        
+        self.navigation.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MyAccountController"), animated: true);
+        
+    }
 }

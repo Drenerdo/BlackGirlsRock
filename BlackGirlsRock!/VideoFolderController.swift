@@ -91,6 +91,7 @@ class VideoFolderController: UIViewController,UICollectionViewDataSource, UIColl
             let cell = sender as! PhotoCollectionCell
             let dest = segue.destinationViewController as! VideoDetailsController
             dest.previewImage = cell.imageView.image;
+            dest.titleImage = self.titleImage;
             dest.imageInfo = self.videos[self.collectionView.indexPathForCell(cell)!.row] as! Dictionary<NSObject, AnyObject>;
         }
     }

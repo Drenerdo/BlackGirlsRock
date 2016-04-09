@@ -15,14 +15,15 @@ class VideoDetailsController: UIViewController,UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var photo: UIImageView!
     @IBOutlet var descriptionLable: UILabel!
-    
+    @IBOutlet var topImage: UIImageView!
     var previewImage: UIImage?
     var imageInfo: Dictionary<NSObject, AnyObject>!
+    var titleImage: String?;
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //self.configureScrollView();
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: Selector("backAction"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Triangle 1"), style: .Plain, target: self, action: #selector(VideoDetailsController.backAction))
         
         
         let url = NSURL.flickrPhotoURL(FKPhotoSizeOriginal, fromPhotoDictionary: self.imageInfo)
@@ -30,6 +31,8 @@ class VideoDetailsController: UIViewController,UIScrollViewDelegate {
         self.photo.sd_setImageWithURL(url, placeholderImage: self.previewImage)
         self.descriptionLable.text = "\(self.imageInfo["title"] as! String)"
         // Do any additional setup after loading the view.
+        
+        self.topImage.image = UIImage(named: self.titleImage!);
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1FB9EDE52BBC279074EB506F /* Pods_BlackGirlsRock_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F2B46144BB8A760CE42682 /* Pods_BlackGirlsRock_.framework */; };
 		4B6DEA341C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */; };
+		A53223041CB9AC8100ABE915 /* MyAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53223031CB9AC8100ABE915 /* MyAccountController.swift */; };
 		A57A10121C9CE3080073AE9D /* PhotoDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A10111C9CE3080073AE9D /* PhotoDetailsController.swift */; };
 		A57A10141C9CF4500073AE9D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57A10131C9CF4500073AE9D /* Social.framework */; };
 		A57A10161C9CFB260073AE9D /* VideoFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A10151C9CFB260073AE9D /* VideoFolderController.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboardbehaviourextention.swift; sourceTree = "<group>"; };
+		A53223031CB9AC8100ABE915 /* MyAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountController.swift; sourceTree = "<group>"; };
 		A57A10111C9CE3080073AE9D /* PhotoDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailsController.swift; sourceTree = "<group>"; };
 		A57A10131C9CF4500073AE9D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A57A10151C9CFB260073AE9D /* VideoFolderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFolderController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				A58386541C9CBB0300B95D10 /* MusicController.swift */,
 				A583865C1C9CD04900B95D10 /* PhotoFolderController.swift */,
 				A57A10111C9CE3080073AE9D /* PhotoDetailsController.swift */,
+				A53223031CB9AC8100ABE915 /* MyAccountController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				A583864D1C9CA28E00B95D10 /* TabBarController.swift in Sources */,
 				A5D229851C9C7CA0000C2959 /* RootViewController.swift in Sources */,
 				F126E4FC1C9C350B006C783F /* LoginViewController.swift in Sources */,
+				A53223041CB9AC8100ABE915 /* MyAccountController.swift in Sources */,
 				A58386531C9CBAF500B95D10 /* VideoGaleryController.swift in Sources */,
 				A5951D4D1CA9495800615CD7 /* PlayListCell.swift in Sources */,
 				A58386511C9CBAE600B95D10 /* PhotoGaleryController.swift in Sources */,

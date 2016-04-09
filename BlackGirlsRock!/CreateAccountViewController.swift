@@ -42,9 +42,6 @@ class CreateAccountViewController: UIViewController {
                     FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData) -> Void in
                         if error == nil
                         {
-                            NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
-                            print("Account Created!")
-                            self.dismissViewControllerAnimated(true, completion: nil)
                         }
                         else
                         {
@@ -76,7 +73,7 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateAccountViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
         for textField in self.textFields

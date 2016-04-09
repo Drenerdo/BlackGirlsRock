@@ -91,6 +91,7 @@ class PhotoFolderController: UIViewController,UICollectionViewDataSource, UIColl
             let cell = sender as! PhotoCollectionCell
             let dest = segue.destinationViewController as! PhotoDetailsController
             dest.previewImage = cell.imageView.image;
+            dest.titleImage = self.titleImage;
             dest.imageInfo = self.photos[self.collectionView.indexPathForCell(cell)!.row] as! Dictionary<NSObject, AnyObject>;
         }
     }
