@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1FB9EDE52BBC279074EB506F /* Pods_BlackGirlsRock_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F2B46144BB8A760CE42682 /* Pods_BlackGirlsRock_.framework */; };
 		4B6DEA341C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */; };
+		8A3EF979A526435AB31F9218 /* Pods_BlackGirlsRock_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9173EF8D522769F5144EF4 /* Pods_BlackGirlsRock_.framework */; };
 		A53223041CB9AC8100ABE915 /* MyAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53223031CB9AC8100ABE915 /* MyAccountController.swift */; };
 		A57A10121C9CE3080073AE9D /* PhotoDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A10111C9CE3080073AE9D /* PhotoDetailsController.swift */; };
 		A57A10141C9CF4500073AE9D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A57A10131C9CF4500073AE9D /* Social.framework */; };
@@ -62,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A9173EF8D522769F5144EF4 /* Pods_BlackGirlsRock_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackGirlsRock_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6DEA331C9C7BDE00CFE951 /* Keyboardbehaviourextention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboardbehaviourextention.swift; sourceTree = "<group>"; };
 		A53223031CB9AC8100ABE915 /* MyAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountController.swift; sourceTree = "<group>"; };
 		A57A10111C9CE3080073AE9D /* PhotoDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailsController.swift; sourceTree = "<group>"; };
@@ -82,9 +83,9 @@
 		A583865C1C9CD04900B95D10 /* PhotoFolderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFolderController.swift; sourceTree = "<group>"; };
 		A5951D4C1CA9495800615CD7 /* PlayListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		A5D229841C9C7CA0000C2959 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		B82D8260AB53975881E443E1 /* Pods-BlackGirlsRock!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackGirlsRock!.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!.release.xcconfig"; sourceTree = "<group>"; };
 		CD1EB3641DD2A352C461916F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D502CCF2D40F38BC4B1A8F85 /* Pods-BlackGirlsRock!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackGirlsRock!.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!.release.xcconfig"; sourceTree = "<group>"; };
-		D63C9B3415D51E9B9D4A412A /* Pods-BlackGirlsRock!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackGirlsRock!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!.debug.xcconfig"; sourceTree = "<group>"; };
+		D59F5E904548591BC04EDBBC /* Pods-BlackGirlsRock!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackGirlsRock!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!.debug.xcconfig"; sourceTree = "<group>"; };
 		F126E4BD1C9C31AE006C783F /* BlackGirlsRock!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlackGirlsRock!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F126E4C01C9C31AE006C783F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F126E4C51C9C31AE006C783F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,7 +107,6 @@
 		F126E4FB1C9C350B006C783F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F126E4FD1C9C38B3006C783F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		F1684A141CAABCB400AB06B0 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
-		F8F2B46144BB8A760CE42682 /* Pods_BlackGirlsRock_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackGirlsRock_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 				F126E4F31C9C320F006C783F /* libc++.tbd in Frameworks */,
 				F126E4F11C9C3206006C783F /* libicucore.tbd in Frameworks */,
 				F126E4EF1C9C31CB006C783F /* Firebase.framework in Frameworks */,
-				1FB9EDE52BBC279074EB506F /* Pods_BlackGirlsRock_.framework in Frameworks */,
+				8A3EF979A526435AB31F9218 /* Pods_BlackGirlsRock_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,16 +157,16 @@
 				F126E4F01C9C3206006C783F /* libicucore.tbd */,
 				F126E4EE1C9C31CB006C783F /* Firebase.framework */,
 				CD1EB3641DD2A352C461916F /* Pods.framework */,
-				F8F2B46144BB8A760CE42682 /* Pods_BlackGirlsRock_.framework */,
+				0A9173EF8D522769F5144EF4 /* Pods_BlackGirlsRock_.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		69639BCB7D8325ED4846CE65 /* Pods */ = {
+		2D711DED20F38AA98A294F95 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D63C9B3415D51E9B9D4A412A /* Pods-BlackGirlsRock!.debug.xcconfig */,
-				D502CCF2D40F38BC4B1A8F85 /* Pods-BlackGirlsRock!.release.xcconfig */,
+				D59F5E904548591BC04EDBBC /* Pods-BlackGirlsRock!.debug.xcconfig */,
+				B82D8260AB53975881E443E1 /* Pods-BlackGirlsRock!.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				F126E4DF1C9C31AE006C783F /* BlackGirlsRock!UITests */,
 				F126E4BE1C9C31AE006C783F /* Products */,
 				1C03B70B86389D19A4C51DF1 /* Frameworks */,
-				69639BCB7D8325ED4846CE65 /* Pods */,
+				2D711DED20F38AA98A294F95 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,7 +264,6 @@
 				F126E4BB1C9C31AE006C783F /* Resources */,
 				4B6FA267B33F269E74BADBD0 /* 📦 Copy Pods Resources */,
 				9B4D73D1427C5FB026FFDCB6 /* 📦 Embed Pods Frameworks */,
-				4D5286B753967C78147D44FE /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,21 +398,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D5286B753967C78147D44FE /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlackGirlsRock!/Pods-BlackGirlsRock!-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		71199A6789CFE732F6E59066 /* 📦 Check Pods Manifest.lock */ = {
@@ -611,7 +595,7 @@
 		};
 		F126E4E61C9C31AE006C783F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D63C9B3415D51E9B9D4A412A /* Pods-BlackGirlsRock!.debug.xcconfig */;
+			baseConfigurationReference = D59F5E904548591BC04EDBBC /* Pods-BlackGirlsRock!.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -637,7 +621,7 @@
 		};
 		F126E4E71C9C31AE006C783F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D502CCF2D40F38BC4B1A8F85 /* Pods-BlackGirlsRock!.release.xcconfig */;
+			baseConfigurationReference = B82D8260AB53975881E443E1 /* Pods-BlackGirlsRock!.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
