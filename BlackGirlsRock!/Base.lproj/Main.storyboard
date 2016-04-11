@@ -1431,8 +1431,8 @@ Adewunmi</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g96-R8-0xG">
-                                <rect key="frame" x="0.0" y="28" width="320" height="580"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g96-R8-0xG">
+                                <rect key="frame" x="0.0" y="20" width="320" height="580"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="150" id="ksM-Ew-mgd" customClass="PhotoCell" customModule="BlackGirlsRock_" customModuleProvider="target">
@@ -1442,19 +1442,23 @@ Adewunmi</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KoF-La-YPb">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KoF-La-YPb">
                                                     <rect key="frame" x="110" y="8" width="100" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="E5e-Ga-nsL"/>
                                                         <constraint firstAttribute="width" constant="100" id="l9h-Hy-U9F"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLV-ZS-SLF">
-                                                    <rect key="frame" x="122.5" y="117.5" width="75" height="27"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLV-ZS-SLF">
+                                                    <rect key="frame" x="123" y="116" width="75" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="upload photo">
                                                         <color key="titleColor" red="0.61960784313725492" green="0.058823529411764705" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="showPhotoControl:" destination="ksM-Ew-mgd" eventType="touchUpInside" id="FMa-pL-BKW"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1475,7 +1479,7 @@ Adewunmi</string>
                                             <outlet property="userImage" destination="KoF-La-YPb" id="zGn-Lu-oaU"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SaveButton" rowHeight="50" id="bZu-VL-lhn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SaveButton" rowHeight="50" id="bZu-VL-lhn" customClass="CellWithButton" customModule="BlackGirlsRock_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bZu-VL-lhn" id="GwN-6h-MOO">
@@ -1485,6 +1489,9 @@ Adewunmi</string>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhu-35-fPt">
                                                     <rect key="frame" x="20" y="20" width="280" height="25"/>
                                                     <state key="normal" title="save" backgroundImage="button_bg"/>
+                                                    <connections>
+                                                        <action selector="saveClicked" destination="bZu-VL-lhn" eventType="touchUpInside" id="Y5r-78-bXC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1517,6 +1524,9 @@ Adewunmi</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="dnb-jX-zww" id="R6N-0M-HtD"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqp-d8-SQ8">
                                                     <rect key="frame" x="25" y="50" width="270" height="1"/>
@@ -1543,7 +1553,7 @@ Adewunmi</string>
                                             <outlet property="titleLabel" destination="Mbi-PT-jAS" id="5aS-2c-dcb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenderCell" rowHeight="60" id="map-YH-5N6" customClass="GenderCell" customModule="BlackGirlsRock_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GenderCell" rowHeight="60" id="map-YH-5N6" customClass="GenderCell" customModule="BlackGirlsRock_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="288" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="map-YH-5N6" id="aHV-Jq-eO5">
@@ -1564,7 +1574,7 @@ Adewunmi</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="il0-e9-OGP">
-                                                    <rect key="frame" x="30" y="31.5" width="10" height="10"/>
+                                                    <rect key="frame" x="30" y="31" width="10" height="10"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="3YP-Qc-ll8"/>
@@ -1578,7 +1588,7 @@ Adewunmi</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6P-9B-Ic4">
-                                                    <rect key="frame" x="110.5" y="31" width="10" height="10"/>
+                                                    <rect key="frame" x="110" y="31" width="10" height="10"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="8gw-Tj-My8"/>
@@ -1586,11 +1596,23 @@ Adewunmi</string>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-0O-6ph">
-                                                    <rect key="frame" x="130.5" y="22" width="46" height="29"/>
+                                                    <rect key="frame" x="130" y="22" width="46" height="29"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuE-7o-G2B">
+                                                    <rect key="frame" x="30" y="8" width="50.5" height="43"/>
+                                                    <connections>
+                                                        <action selector="clickOnMale:" destination="map-YH-5N6" eventType="touchUpInside" id="nVi-DU-PN5"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDo-4u-4zd">
+                                                    <rect key="frame" x="110" y="8" width="66" height="43"/>
+                                                    <connections>
+                                                        <action selector="clickOnFemale:" destination="map-YH-5N6" eventType="touchUpInside" id="W1E-le-CB5"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="g1H-0O-6ph" firstAttribute="centerY" secondItem="k6P-9B-Ic4" secondAttribute="centerY" id="2mO-3p-nYc"/>
@@ -1599,16 +1621,24 @@ Adewunmi</string>
                                                 <constraint firstItem="wJ1-97-Ttn" firstAttribute="top" secondItem="YTU-ZW-TWf" secondAttribute="bottom" constant="33" id="9fM-u9-VZV"/>
                                                 <constraint firstItem="wJ1-97-Ttn" firstAttribute="top" secondItem="qSO-H6-OUP" secondAttribute="bottom" id="JpP-xN-E3X"/>
                                                 <constraint firstItem="il0-e9-OGP" firstAttribute="centerY" secondItem="aHV-Jq-eO5" secondAttribute="centerY" id="Jqw-Yk-X0u"/>
+                                                <constraint firstItem="CuE-7o-G2B" firstAttribute="leading" secondItem="il0-e9-OGP" secondAttribute="leading" id="N7e-Nv-hFY"/>
+                                                <constraint firstItem="KDo-4u-4zd" firstAttribute="leading" secondItem="k6P-9B-Ic4" secondAttribute="leading" id="P9S-qH-Obb"/>
                                                 <constraint firstItem="qSO-H6-OUP" firstAttribute="top" secondItem="YTU-ZW-TWf" secondAttribute="bottom" constant="4" id="RaX-RD-H3N"/>
                                                 <constraint firstItem="wJ1-97-Ttn" firstAttribute="leading" secondItem="aHV-Jq-eO5" secondAttribute="leading" constant="25" id="RfW-i2-CfK"/>
                                                 <constraint firstAttribute="trailing" secondItem="wJ1-97-Ttn" secondAttribute="trailing" constant="25" id="UAF-T1-YvF"/>
                                                 <constraint firstItem="YTU-ZW-TWf" firstAttribute="leading" secondItem="aHV-Jq-eO5" secondAttribute="leading" constant="20" id="ZUb-IX-Js8"/>
                                                 <constraint firstItem="YTU-ZW-TWf" firstAttribute="top" secondItem="aHV-Jq-eO5" secondAttribute="top" constant="6" id="ZxF-bU-qC7"/>
+                                                <constraint firstItem="CuE-7o-G2B" firstAttribute="trailing" secondItem="qSO-H6-OUP" secondAttribute="trailing" id="cKG-Ae-e3j"/>
+                                                <constraint firstItem="KDo-4u-4zd" firstAttribute="trailing" secondItem="g1H-0O-6ph" secondAttribute="trailing" id="gQn-zM-JJ2"/>
                                                 <constraint firstItem="qSO-H6-OUP" firstAttribute="leading" secondItem="il0-e9-OGP" secondAttribute="trailing" constant="10" id="kxL-cR-pyo"/>
                                                 <constraint firstItem="wJ1-97-Ttn" firstAttribute="top" secondItem="g1H-0O-6ph" secondAttribute="bottom" id="m82-ff-rJs"/>
                                                 <constraint firstItem="il0-e9-OGP" firstAttribute="leading" secondItem="aHV-Jq-eO5" secondAttribute="leading" constant="30" id="nxA-Kq-qyJ"/>
                                                 <constraint firstItem="k6P-9B-Ic4" firstAttribute="leading" secondItem="qSO-H6-OUP" secondAttribute="trailing" constant="30" id="ogH-RN-CdL"/>
+                                                <constraint firstItem="wJ1-97-Ttn" firstAttribute="top" secondItem="CuE-7o-G2B" secondAttribute="bottom" id="r0K-ii-LX8"/>
                                                 <constraint firstItem="g1H-0O-6ph" firstAttribute="top" secondItem="YTU-ZW-TWf" secondAttribute="bottom" constant="4" id="rmY-VL-oPH"/>
+                                                <constraint firstItem="CuE-7o-G2B" firstAttribute="top" secondItem="aHV-Jq-eO5" secondAttribute="topMargin" id="wKL-YJ-k7n"/>
+                                                <constraint firstItem="wJ1-97-Ttn" firstAttribute="top" secondItem="KDo-4u-4zd" secondAttribute="bottom" id="xNW-gZ-mcN"/>
+                                                <constraint firstItem="KDo-4u-4zd" firstAttribute="top" secondItem="aHV-Jq-eO5" secondAttribute="topMargin" id="xdh-hm-ALc"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -1628,11 +1658,46 @@ Adewunmi</string>
                                     <outlet property="delegate" destination="HLF-YD-YM5" id="zxl-K3-ndg"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPP-NP-7x8">
+                                <rect key="frame" x="0.0" y="370" width="320" height="230"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KLw-cI-RbD">
+                                        <rect key="frame" x="0.0" y="40" width="320" height="190"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="482101130.64851302">
+                                            <!--2016-04-11 20:58:50 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="datePickerChageValue:" destination="HLF-YD-YM5" eventType="valueChanged" id="6xB-15-yYl"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pou-4a-1ZG">
+                                        <rect key="frame" x="266" y="6" width="46" height="30"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="hideDatePicker" destination="HLF-YD-YM5" eventType="touchUpInside" id="r0P-cE-TSa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KLw-cI-RbD" firstAttribute="top" secondItem="pou-4a-1ZG" secondAttribute="bottom" id="7Ku-xV-MmS"/>
+                                    <constraint firstItem="pou-4a-1ZG" firstAttribute="top" secondItem="oPP-NP-7x8" secondAttribute="top" id="9Fb-xt-gTS"/>
+                                    <constraint firstAttribute="trailing" secondItem="KLw-cI-RbD" secondAttribute="trailing" id="E9A-FD-bJA"/>
+                                    <constraint firstItem="KLw-cI-RbD" firstAttribute="leading" secondItem="oPP-NP-7x8" secondAttribute="leading" id="GhP-jA-ye1"/>
+                                    <constraint firstAttribute="height" constant="230" id="bDe-W7-kyL"/>
+                                    <constraint firstAttribute="trailing" secondItem="pou-4a-1ZG" secondAttribute="trailing" constant="10" id="kpV-8F-l1S"/>
+                                    <constraint firstItem="KLw-cI-RbD" firstAttribute="top" secondItem="oPP-NP-7x8" secondAttribute="top" constant="40" id="x4u-xX-7EV"/>
+                                    <constraint firstAttribute="bottom" secondItem="KLw-cI-RbD" secondAttribute="bottom" id="ytZ-Sc-TJb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="N2I-5b-5tV" firstAttribute="top" secondItem="oPP-NP-7x8" secondAttribute="bottom" id="05T-qd-hwf"/>
                             <constraint firstItem="N2I-5b-5tV" firstAttribute="top" secondItem="g96-R8-0xG" secondAttribute="bottom" id="GXj-aK-Smm"/>
                             <constraint firstAttribute="trailing" secondItem="g96-R8-0xG" secondAttribute="trailing" id="VUb-f5-nw1"/>
+                            <constraint firstAttribute="trailing" secondItem="oPP-NP-7x8" secondAttribute="trailing" id="Wf0-aD-qkg"/>
+                            <constraint firstItem="oPP-NP-7x8" firstAttribute="leading" secondItem="Jej-E5-cOr" secondAttribute="leading" id="gHn-3L-v2F"/>
                             <constraint firstItem="g96-R8-0xG" firstAttribute="leading" secondItem="Jej-E5-cOr" secondAttribute="leading" id="kdT-SL-vIg"/>
                             <constraint firstItem="g96-R8-0xG" firstAttribute="top" secondItem="BJ2-jz-cYZ" secondAttribute="bottom" id="taR-3I-kIm"/>
                         </constraints>
@@ -1642,6 +1707,9 @@ Adewunmi</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
+                        <outlet property="datePicker" destination="KLw-cI-RbD" id="X0w-Ur-WCf"/>
+                        <outlet property="datePickerConstraint" destination="05T-qd-hwf" id="Tjb-2L-0sK"/>
+                        <outlet property="datePickerContainer" destination="oPP-NP-7x8" id="r5i-HN-OdF"/>
                         <outlet property="tableView" destination="g96-R8-0xG" id="ruc-Ww-hma"/>
                     </connections>
                 </viewController>

@@ -89,24 +89,22 @@ class LoginViewController: UIViewController {
                         } else {
                             print("Logged in! \(authData)")
                             
+                            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+                                let image = NSData(contentsOfURL: NSURL(string: authData.providerData["profileImageURL"]! as! String)!);
+                                let newUser = [
+                                    "provider": authData.provider,
+                                    "displayName": authData.providerData["displayName"]as? String,
+                                    "email": authData.providerData["email"]as? String,
+                                    "profileImage": image?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength),// as? String,
+                                    "firstName": authData.providerData["cachedUserProfile"]?["first_name"] as? String,
+                                    "lastName": authData.providerData["cachedUserProfile"]?["last_name"] as? String ,
+                                    "gender": authData.providerData["cachedUserProfile"]?["gender"] as? String,
+                                ]
+                                
+                                FIREBASE_REF.childByAppendingPath("users")
+                                    .childByAppendingPath(authData.uid).setValue(newUser)
+                            })
                             
-                            let newUser = [
-                                "provider": authData.provider,
-                                "displayName": authData.providerData["displayName"] as? NSString as? String,
-                                "email": authData.providerData["email"] as? NSString as? String,
-                                "profileImage":  authData.providerData["profileImageURL"] as? String,
-                                "firstName": authData.providerData["cachedUserProfile"]?["first_name"] as? String,
-                                "lastName": authData.providerData["cachedUserProfile"]?["last_name"] as? String,
-                            ]
-                            
-                            FIREBASE_REF.childByAppendingPath("users")
-                                .childByAppendingPath(authData.uid).setValue(newUser)
-                            
-                            // Display next view controller
-                           /* let nextView = (self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController"))! as UIViewController
-                            self.navigationController?.setViewControllers([nextView], animated: true);*/
-                            
-                            //self.rootController?.changeUserInfo();
                         }
                 })
             }
@@ -117,7 +115,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         

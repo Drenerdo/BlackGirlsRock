@@ -51,9 +51,13 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
             if authData != nil
             {
                 FIREBASE_REF.childByAppendingPath("users").childByAppendingPath(authData.uid).observeEventType(.Value, withBlock: { (snapshot) in
-                        if let url = snapshot.value.valueForKey("profileImage") as? String
+                        if let image = snapshot.value.valueForKey("profileImage") as? String
                         {
-                            self.accountImage.sd_setImageWithURL(NSURL(string: url));
+                            
+                            if let data = NSData(base64EncodedString: image, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                            {
+                                self.accountImage.image = UIImage(data: data);
+                            }
                         }
                         
                         let fn = snapshot.value["firstName"] as? String
@@ -64,9 +68,11 @@ class RootViewController: UIViewController, UINavigationControllerDelegate, UIGe
                             self.userName.text = "\(fn!)\r\n\(ln!)"
                         }
                         self.launchImage.hidden = true;
-                        self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TabBarController")], animated: true);
+                    
                     }, withCancelBlock: { (error) in
                 });
+                
+                self.navigation.setViewControllers([UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TabBarController")], animated: true);
             }else
             {
                 self.launchImage.hidden = true;
